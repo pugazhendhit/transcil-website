@@ -136,12 +136,12 @@
     font-size: 2.2rem;
     font-weight: 900;
     letter-spacing: 1.5px;
-    background: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
-    filter: drop-shadow(0 1px 3px rgba(8, 145, 178, 0.3));
+    filter: drop-shadow(0 1px 3px rgba(0, 177, 79, 0.3));
     line-height: 1;
     transition: all 0.3s ease;
 }
@@ -165,7 +165,7 @@
 }
 
 .logo:hover .brand-name {
-    filter: drop-shadow(0 2px 6px rgba(8, 145, 178, 0.4)) drop-shadow(0 0 12px rgba(124, 58, 237, 0.3));
+    filter: drop-shadow(0 2px 6px rgba(0, 177, 79, 0.4)) drop-shadow(0 0 12px rgba(0, 211, 95, 0.3));
     transform: translateX(3px);
 }
 
@@ -178,17 +178,17 @@
 .ebike-icon {
     margin-left: 15px;
     font-size: 2rem;
-    background: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 1px 4px rgba(8, 145, 178, 0.4));
+    filter: drop-shadow(0 1px 4px rgba(0, 177, 79, 0.4));
     transition: all 0.3s ease;
 }
 
 .logo:hover .ebike-icon {
     transform: scale(1.15) translateY(-2px);
-    filter: drop-shadow(0 3px 8px rgba(8, 145, 178, 0.5)) drop-shadow(0 0 12px rgba(124, 58, 237, 0.4));
+    filter: drop-shadow(0 3px 8px rgba(0, 177, 79, 0.5)) drop-shadow(0 0 12px rgba(0, 211, 95, 0.4));
 }
 
 .logo-icon {

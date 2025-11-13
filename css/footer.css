@@ -15,18 +15,53 @@
 
 .footer-section h3 {
     margin-bottom: 1.5rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo .modern-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-logo .brand-name {
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.footer-logo .brand-tagline {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    line-height: 1;
+}
+
+.footer-logo .ebike-icon {
     font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .footer-section p {
@@ -62,18 +97,19 @@
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--gradient-1);
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
-    transition: transform var(--transition-normal);
+    color: white;
+    transition: all var(--transition-normal);
     text-decoration: none;
 }
 
 .social-links a:hover {
-    transform: translateY(-5px) scale(1.1);
+    background: var(--accent-color);
+    transform: translateY(-3px);
 }
 
 .footer-bottom {
