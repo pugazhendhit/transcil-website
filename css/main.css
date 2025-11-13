@@ -1,7 +1,7 @@
-/* 
+/*
  * TRANSCIL - Main Stylesheet
  * Smart, Sustainable, Scalable EV Fleet Operations
- * 
+ *
  * This is the main CSS file that imports all modular stylesheets
  */
 
@@ -18,6 +18,9 @@
 @import url('buttons.css');
 @import url('services.css');
 @import url('components.css');
+
+/* Modern Animations */
+@import url('modern-animations.css');
 
 /* Animations (disabled bike animations) */
 /* @import url('bike-animations.css'); */

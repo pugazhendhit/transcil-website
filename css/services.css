@@ -2,6 +2,7 @@
 .services {
     padding: var(--spacing-xl) 0;
     background: var(--darker-bg);
+    position: relative;
 }
 
 .section-header {
@@ -14,9 +15,11 @@
     font-weight: 700;
     margin-bottom: 1rem;
     background: var(--gradient-1);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 3s ease infinite;
 }
 
 .section-subtitle {
@@ -32,81 +35,138 @@
 
 .service-card {
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all var(--transition-normal);
+    border: 2px solid rgba(8, 145, 178, 0.15);
+    transition: all var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
+/* Animated gradient border on hover */
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-1);
-    transform: scaleX(0);
-    transition: transform var(--transition-normal);
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        var(--primary-color),
+        var(--secondary-color),
+        transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--card-bg);
+    border-radius: calc(var(--radius-lg) - 2px);
+    z-index: 1;
 }
 
 .service-card:hover::before {
-    transform: scaleX(1);
+    opacity: 1;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
 }
 
 .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     background: var(--gradient-1);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    transition: all var(--transition-bounce);
+    box-shadow: 0 8px 20px rgba(8, 145, 178, 0.3);
 }
 
 .service-card:hover .service-icon {
-    animation: bounce 0.5s ease;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(8, 145, 178, 0.5);
+    animation: float 2s ease-in-out infinite;
 }
 
 .service-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+    transition: color var(--transition-normal);
+}
+
+.service-card:hover .service-title {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .service-description {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    transition: color var(--transition-normal);
+}
+
+.service-card:hover .service-description {
+    color: var(--text-primary);
 }
 
 .service-features {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 2;
 }
 
 .service-features span {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: var(--text-secondary);
     font-size: 0.9rem;
+    transition: all var(--transition-normal);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.service-card:hover .service-features span {
+    background: rgba(8, 145, 178, 0.05);
+    transform: translateX(5px);
 }
 
 .service-features i {
     color: var(--primary-color);
+    font-size: 1rem;
+    transition: transform var(--transition-normal);
+}
+
+.service-card:hover .service-features i {
+    transform: scale(1.2);
 }
 
 @keyframes bounce {
