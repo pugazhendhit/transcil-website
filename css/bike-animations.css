@@ -1,0 +1,931 @@
+/* TRANSCIL EV Scooter Animations - Ultra Realistic Design */
+
+/* Animated Scooter Component */
+.ev-bike {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    display: inline-block;
+}
+
+/* Scooter Frame Container */
+.bike-frame {
+    position: absolute;
+    width: 320px;
+    height: 140px;
+    top: 30px;
+    left: 15px;
+}
+
+.bike-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+/* Main Scooter Body - White/Silver */
+.frame-line {
+    position: absolute;
+    border-radius: 12px;
+}
+
+/* Front Fairing/Body Panel - White/Silver Modern Design */
+.frame-top {
+    width: 180px;
+    height: 75px;
+    top: 12px;
+    left: 55px;
+    border-radius: 25px 30px 10px 12px;
+    background: linear-gradient(135deg, 
+        #f8f9fa 0%, 
+        #e9ecef 25%,
+        #dee2e6 50%, 
+        #ced4da 75%,
+        #adb5bd 100%);
+    border: none;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.15),
+        inset 0 3px 10px rgba(255, 255, 255, 0.9),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cyan/Blue Brand Stripe - Like "Bijliride" */
+.frame-top::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 28px;
+    top: 35px;
+    left: 10px;
+    background: linear-gradient(90deg, 
+        rgba(6, 182, 212, 0.9) 0%, 
+        rgba(8, 145, 178, 0.95) 50%, 
+        rgba(6, 182, 212, 0.9) 100%);
+    border-radius: 14px;
+    box-shadow: 
+        0 3px 12px rgba(6, 182, 212, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Footboard/Floorboard - Dark Modern */
+.frame-diagonal {
+    width: 130px;
+    height: 20px;
+    top: 70px;
+    left: 60px;
+    background: linear-gradient(90deg, 
+        #495057 0%, 
+        #343a40 50%, 
+        #212529 100%);
+    border-radius: 10px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Anti-slip Texture */
+.frame-diagonal::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 10px,
+        rgba(255, 255, 255, 0.08) 10px,
+        rgba(255, 255, 255, 0.08) 11px
+    );
+    border-radius: 10px;
+}
+
+/* Rear Body Section - White/Silver */
+.frame-seat {
+    width: 70px;
+    height: 75px;
+    top: -2px;
+    left: 20px;
+    background: linear-gradient(150deg, 
+        #f8f9fa 0%, 
+        #e9ecef 30%,
+        #dee2e6 60%, 
+        #adb5bd 100%);
+    border-radius: 15px 15px 8px 8px;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.2),
+        inset 2px 3px 8px rgba(255, 255, 255, 0.8),
+        inset -2px -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Rear Mudguard - Smooth Curve */
+.rear-fork {
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    top: 52px;
+    left: 25px;
+    background: linear-gradient(180deg, 
+        #dee2e6 0%, 
+        #adb5bd 50%,
+        #868e96 100%);
+    border-radius: 10px 10px 35px 35px;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.25),
+        inset 0 2px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Front Suspension/Fork - Modern Dark */
+.front-fork {
+    position: absolute;
+    width: 14px;
+    height: 65px;
+    top: 25px;
+    left: 220px;
+    background: linear-gradient(180deg, 
+        #495057 0%, 
+        #343a40 50%, 
+        #212529 100%);
+    border-radius: 7px;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Front Fender */
+.front-fork::before {
+    content: '';
+    position: absolute;
+    width: 65px;
+    height: 35px;
+    bottom: 5px;
+    left: -25px;
+    background: linear-gradient(180deg, 
+        #f8f9fa 0%,
+        #dee2e6 50%, 
+        #adb5bd 100%);
+    border-radius: 8px 8px 40px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Handlebar - Professional Style */
+.handlebar {
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    top: 5px;
+    left: 210px;
+    background: linear-gradient(90deg, 
+        #343a40 0%, 
+        #212529 50%, 
+        #343a40 100%);
+    border-radius: 15px;
+    box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Left Mirror/Grip */
+.handlebar::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(135deg, #343a40, #212529);
+    border-radius: 6px;
+    left: -15px;
+    top: -1px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Mirror/Grip */
+.handlebar::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(135deg, #212529, #343a40);
+    border-radius: 6px;
+    right: -15px;
+    top: -1px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Seat - Dark Comfortable Design */
+.bike-seat {
+    position: absolute;
+    width: 70px;
+    height: 32px;
+    top: -8px;
+    left: 18px;
+    background: linear-gradient(180deg, 
+        #495057 0%, 
+        #343a40 40%, 
+        #212529 100%);
+    border-radius: 28px 28px 12px 12px;
+    box-shadow: 
+        0 6px 18px rgba(0, 0, 0, 0.5),
+        inset 0 3px 8px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.4);
+    border: 2px solid #141619;
+}
+
+/* Seat Stitching Detail */
+.bike-seat::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    right: 15px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+}
+
+.bike-seat::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 15px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+}
+
+/* Hidden Battery Pack (integrated) */
+.battery-pack {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.battery-indicator {
+    position: absolute;
+    top: 25px;
+    left: 85px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #10b981, #059669);
+    border-radius: 50%;
+    animation: charge 1.5s infinite;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+    z-index: 10;
+}
+
+.battery-level {
+    display: none;
+}
+
+/* Professional Wheels - Dark/Black */
+.wheel {
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    border: 10px solid #0d1117;
+    border-radius: 50%;
+    bottom: 0;
+    animation: wheelRotate 0.5s linear infinite;
+    background: radial-gradient(circle at 35% 35%, 
+        #495057 0%, 
+        #343a40 30%, 
+        #212529 60%, 
+        #0d1117 100%);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.5),
+        inset -6px -6px 20px rgba(0, 0, 0, 0.5),
+        inset 6px 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Wheel Hub/Center - Light Gray */
+.wheel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle at 30% 30%, 
+        #e9ecef 0%, 
+        #ced4da 40%, 
+        #adb5bd 70%,
+        #868e96 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 8px rgba(0, 0, 0, 0.3),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.4),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.3);
+    border: 3px solid #343a40;
+}
+
+/* Wheel Spokes - Subtle Pattern */
+.wheel::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    background: 
+        linear-gradient(0deg, transparent 48%, rgba(73, 80, 87, 0.4) 48%, rgba(73, 80, 87, 0.4) 52%, transparent 52%),
+        linear-gradient(45deg, transparent 48%, rgba(73, 80, 87, 0.4) 48%, rgba(73, 80, 87, 0.4) 52%, transparent 52%),
+        linear-gradient(90deg, transparent 48%, rgba(73, 80, 87, 0.4) 48%, rgba(73, 80, 87, 0.4) 52%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(73, 80, 87, 0.4) 48%, rgba(73, 80, 87, 0.4) 52%, transparent 52%);
+    border-radius: 50%;
+}
+
+.front-wheel {
+    left: 228px;
+}
+
+.rear-wheel {
+    left: 28px;
+}
+
+/* Tire Tread */
+.wheel-tread {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px dashed rgba(255, 255, 255, 0.2);
+    top: -3px;
+    left: -3px;
+}
+
+/* Front Headlight - Integrated */
+.headlight {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, 
+        #ffffff 0%, 
+        #ffe066 40%, 
+        #ffd700 100%);
+    border-radius: 50%;
+    top: 15px;
+    left: 215px;
+    box-shadow: 
+        0 0 30px #ffd700, 
+        0 0 60px rgba(255, 215, 0, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.8);
+    animation: headlightBlink 3s infinite;
+    border: 3px solid #2d3748;
+}
+
+/* Rear Tail Light */
+.taillight {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, 
+        #ff4444 0%, 
+        #cc0000 70%, 
+        #990000 100%);
+    border-radius: 50%;
+    top: 15px;
+    left: 22px;
+    box-shadow: 
+        0 0 20px #ff0000,
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    animation: taillightBlink 1.5s infinite;
+    border: 2px solid #1a202c;
+}
+
+/* TRANSCIL Logo on Cyan Stripe */
+.bike-logo {
+    position: absolute;
+    top: 52px;
+    left: 95px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(6, 182, 212, 0.6);
+    letter-spacing: 2.5px;
+    z-index: 20;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Professional Rider - Like Reference Image */
+.rider {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    top: -52px;
+    left: 100px;
+    z-index: 8;
+}
+
+/* Helmet - Orange/Peach (Like Reference) */
+.rider-head {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(circle at 35% 35%, 
+        #ffa94d 0%, 
+        #ff8c42 40%, 
+        #ff6b35 100%);
+    border-radius: 50%;
+    top: 0;
+    left: 14px;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.4),
+        inset -4px -4px 12px rgba(0, 0, 0, 0.2),
+        inset 4px 4px 12px rgba(255, 255, 255, 0.3);
+    border: 2px solid #e85d04;
+}
+
+/* Face/Visor - Skin Tone */
+.rider-head::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 14px;
+    background: radial-gradient(ellipse, 
+        #ffb4a2 0%, 
+        #e09f8f 50%,
+        #b87a6a 100%);
+    border-radius: 50% 50% 40% 40%;
+    top: 14px;
+    left: 7px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Rider Jacket - Purple/Violet (Like Reference) */
+.rider-body {
+    position: absolute;
+    width: 45px;
+    height: 55px;
+    background: linear-gradient(180deg, 
+        #a855f7 0%, 
+        #9333ea 40%, 
+        #7e22ce 100%);
+    border-radius: 14px 14px 10px 10px;
+    top: 35px;
+    left: 10px;
+    box-shadow: 
+        0 5px 18px rgba(0, 0, 0, 0.35),
+        inset 2px 3px 8px rgba(255, 255, 255, 0.2),
+        inset -2px -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Jacket Collar/Neck */
+.rider-body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 14px;
+    top: 0;
+    background: linear-gradient(180deg, 
+        #9333ea 0%, 
+        #7e22ce 100%);
+    border-radius: 14px 14px 0 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Rider Arms - Purple Sleeves */
+.rider-arm {
+    position: absolute;
+    width: 32px;
+    height: 9px;
+    background: linear-gradient(90deg, 
+        #9333ea 0%, 
+        #7e22ce 100%);
+    border-radius: 5px;
+    top: 48px;
+    box-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.35),
+        inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.rider-arm-left {
+    left: -14px;
+    transform: rotate(-10deg);
+}
+
+.rider-arm-right {
+    right: -14px;
+    transform: rotate(10deg);
+}
+
+/* Hands on Handlebar */
+.rider-arm::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffb4a2, #e09f8f);
+    border-radius: 50%;
+    bottom: -2px;
+}
+
+.rider-arm-left::after {
+    right: 0;
+}
+
+.rider-arm-right::after {
+    left: 0;
+}
+
+/* Rider Pants/Legs - Purple */
+.rider-leg {
+    position: absolute;
+    width: 11px;
+    height: 42px;
+    background: linear-gradient(180deg, 
+        #7e22ce 0%, 
+        #6b21a8 50%,
+        #581c87 100%);
+    border-radius: 6px;
+    top: 65px;
+    box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.35),
+        inset 1px 1px 3px rgba(255, 255, 255, 0.15);
+}
+
+.rider-leg-left {
+    left: 12px;
+}
+
+.rider-leg-right {
+    right: 12px;
+}
+
+/* Shoes - Dark */
+.rider-leg::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 9px;
+    background: linear-gradient(90deg, #212529, #343a40);
+    border-radius: 5px 5px 3px 3px;
+    bottom: -6px;
+    left: -3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Electric Spark Effect */
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: sparkle 1s infinite;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.spark:nth-child(1) { top: 15px; left: 80px; animation-delay: 0s; }
+.spark:nth-child(2) { top: 25px; left: 75px; animation-delay: 0.3s; }
+.spark:nth-child(3) { top: 20px; left: 85px; animation-delay: 0.6s; }
+
+/* Speed Lines */
+.speed-lines {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+}
+
+.speed-line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    animation: speedLine 1s linear infinite;
+}
+
+.speed-line:nth-child(1) { top: 0; animation-delay: 0s; }
+.speed-line:nth-child(2) { top: 10px; animation-delay: 0.3s; }
+.speed-line:nth-child(3) { top: 20px; animation-delay: 0.6s; }
+
+/* Animated Bike Scene */
+.bike-scene {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.5) 100%);
+    border-radius: var(--radius-lg);
+}
+
+.riding-bike {
+    position: absolute;
+    bottom: 50px;
+    animation: rideAcross 10s linear infinite;
+}
+
+.road {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--primary-color) 0px,
+        var(--primary-color) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    animation: roadMove 1s linear infinite;
+}
+
+/* City Skyline */
+.city-skyline {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 200%;
+    height: 150px;
+    animation: cityMove 20s linear infinite;
+}
+
+.building {
+    position: absolute;
+    bottom: 0;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.building:nth-child(1) { left: 50px; width: 60px; height: 100px; }
+.building:nth-child(2) { left: 150px; width: 80px; height: 120px; }
+.building:nth-child(3) { left: 280px; width: 50px; height: 80px; }
+.building:nth-child(4) { left: 380px; width: 70px; height: 110px; }
+.building:nth-child(5) { left: 500px; width: 60px; height: 90px; }
+.building:nth-child(6) { left: 600px; width: 90px; height: 130px; }
+
+.building::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 15px,
+        rgba(16, 185, 129, 0.2) 15px,
+        rgba(16, 185, 129, 0.2) 16px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 15px,
+        rgba(16, 185, 129, 0.2) 15px,
+        rgba(16, 185, 129, 0.2) 16px
+    );
+}
+
+/* 3D Bike Showcase */
+.bike-showcase {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.bike-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate3D 20s linear infinite;
+}
+
+.bike-side {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
+}
+
+/* Floating Bike Models */
+.bike-model {
+    position: relative;
+    display: inline-block;
+    animation: floatBike 3s ease-in-out infinite;
+}
+
+.bike-model:hover {
+    animation-play-state: paused;
+}
+
+/* Energy Flow Effect */
+.energy-flow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.energy-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: flowEnergy 2s linear infinite;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Charging Animation */
+.charging-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.charging-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: chargingPulse 2s ease-out infinite;
+}
+
+.charging-ring:nth-child(2) { animation-delay: 0.5s; }
+.charging-ring:nth-child(3) { animation-delay: 1s; }
+
+/* Animations */
+@keyframes wheelRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes batteryGlow {
+    0%, 100% { 
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        box-shadow: 0 4px 25px rgba(16, 185, 129, 0.8), 0 0 40px rgba(52, 211, 153, 0.6);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes batteryCharging {
+    0% { width: 60%; }
+    50% { width: 85%; }
+    100% { width: 60%; }
+}
+
+@keyframes headlightBlink {
+    0%, 93%, 100% {
+        opacity: 1;
+        box-shadow: 
+            0 0 30px #ffd700, 
+            0 0 60px rgba(255, 215, 0, 0.5),
+            inset 0 2px 5px rgba(255, 255, 255, 0.8);
+    }
+    95%, 97% {
+        opacity: 0.4;
+        box-shadow: 0 0 15px #ffd700;
+    }
+}
+
+@keyframes taillightBlink {
+    0%, 88%, 100% {
+        opacity: 1;
+        box-shadow: 
+            0 0 20px #ff0000,
+            inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    }
+    92%, 96% {
+        opacity: 0.3;
+        box-shadow: 0 0 8px #ff0000;
+    }
+}
+
+@keyframes charge {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+    }
+    50% { 
+        opacity: 0.6; 
+        transform: scale(1.4);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 1);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes speedLine {
+    0% { left: 100%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: -30px; opacity: 0; }
+}
+
+@keyframes rideAcross {
+    0% { left: -200px; }
+    100% { left: calc(100% + 200px); }
+}
+
+@keyframes roadMove {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }
+}
+
+@keyframes cityMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes rotate3D {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes floatBike {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes flowEnergy {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateX(100px) translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes chargingPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ev-bike {
+        width: 250px;
+        height: 150px;
+        transform: scale(0.8);
+    }
+    
+    .bike-showcase {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .bike-scene {
+        height: 200px;
+    }
+    
+    .rider {
+        transform: scale(0.9);
+    }
+    
+    .wheel {
+        width: 60px;
+        height: 60px;
+    }
+}
+

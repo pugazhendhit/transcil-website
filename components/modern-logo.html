@@ -1,0 +1,177 @@
+<!-- Modern Shiny TRANSCIL Logo Component -->
+<div class="modern-logo">
+    <!-- Location Pin Icon -->
+    <div class="logo-pin">
+        <div class="pin-outer">
+            <div class="pin-shine"></div>
+        </div>
+        <div class="pin-inner-circle"></div>
+        <div class="pin-arrow"></div>
+    </div>
+
+    <!-- Brand Text -->
+    <div class="logo-text">
+        <div class="brand-name">TRANSCIL</div>
+    </div>
+</div>
+
+<style>
+/* Modern Shiny Logo Styles */
+.modern-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+/* Location Pin */
+.logo-pin {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.pin-outer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, 
+        #1e3a8a 0%, 
+        #3b82f6 40%, 
+        #60a5fa 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 
+        0 8px 20px rgba(30, 58, 138, 0.4),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+/* Glossy shine on pin */
+.pin-shine {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.5) 0%, 
+        transparent 100%);
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
+}
+
+.pin-inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Arrow inside pin */
+.pin-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 18px solid #1e3a8a;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 2;
+}
+
+.pin-arrow::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Brand Name - Shiny Green */
+.logo-text .brand-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    background: linear-gradient(135deg, 
+        #065f46 0%, 
+        #059669 20%, 
+        #10b981 40%, 
+        #34d399 60%, 
+        #6ee7b7 80%,
+        #a7f3d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    filter: drop-shadow(0 3px 8px rgba(5, 150, 105, 0.3));
+    line-height: 1;
+}
+
+/* Glossy overlay effect */
+.logo-text .brand-name::before {
+    content: 'TRANSCIL';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.5) 0%, 
+        transparent 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover effect */
+.modern-logo:hover .pin-outer {
+    transform: rotate(-45deg) scale(1.05);
+    box-shadow: 
+        0 12px 30px rgba(30, 58, 138, 0.5),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.modern-logo:hover .brand-name {
+    filter: drop-shadow(0 5px 12px rgba(5, 150, 105, 0.4));
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-pin {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .pin-outer {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .pin-inner-circle {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .logo-text .brand-name {
+        font-size: 1.8rem;
+    }
+}
+</style>
+

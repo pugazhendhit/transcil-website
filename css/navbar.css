@@ -1,0 +1,356 @@
+/* Navigation Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: var(--z-nav);
+    padding: 1rem 0;
+    transition: all var(--transition-normal);
+    border-bottom: 1px solid rgba(8, 145, 178, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+/* Modern Shiny Logo Styles */
+.modern-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo-pin {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.pin-outer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #60a5fa 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 
+        0 8px 20px rgba(30, 58, 138, 0.4),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.pin-shine {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
+}
+
+.pin-inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.pin-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 18px solid #1e3a8a;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 2;
+}
+
+.pin-arrow::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 15px solid rgba(255, 255, 255, 0.35);
+}
+
+.logo-text .brand-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    background: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    filter: drop-shadow(0 1px 3px rgba(8, 145, 178, 0.3));
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.logo-text .brand-tagline {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .pin-outer {
+    transform: rotate(-45deg) scale(1.1);
+    box-shadow: 
+        0 12px 30px rgba(30, 58, 138, 0.5),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.4);
+}
+
+.logo:hover .brand-name {
+    filter: drop-shadow(0 2px 6px rgba(8, 145, 178, 0.4)) drop-shadow(0 0 12px rgba(124, 58, 237, 0.3));
+    transform: translateX(3px);
+}
+
+.logo:hover .brand-tagline {
+    color: var(--primary-color);
+    transform: translateX(3px);
+}
+
+/* E-Bike Icon */
+.ebike-icon {
+    margin-left: 15px;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 1px 4px rgba(8, 145, 178, 0.4));
+    transition: all 0.3s ease;
+}
+
+.logo:hover .ebike-icon {
+    transform: scale(1.15) translateY(-2px);
+    filter: drop-shadow(0 3px 8px rgba(8, 145, 178, 0.5)) drop-shadow(0 0 12px rgba(124, 58, 237, 0.4));
+}
+
+.logo-icon {
+    position: relative;
+    font-size: 2rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+}
+
+/* EV Bike Logo Icon */
+.logo-bike {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+}
+
+.logo-bike-wheel {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-image: var(--gradient-1) 1;
+    border-radius: 50%;
+    bottom: 0;
+    animation: logoWheelSpin 2s linear infinite;
+}
+
+.logo-bike-wheel:first-child {
+    left: 2px;
+}
+
+.logo-bike-wheel:last-child {
+    right: 2px;
+}
+
+.logo-bike-frame {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--gradient-1);
+    top: 8px;
+    left: 8px;
+    transform: rotate(-10deg);
+}
+
+.logo-bike-battery {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    top: 6px;
+    left: 15px;
+    animation: logoBatteryGlow 1.5s infinite;
+}
+
+.logo i {
+    font-size: 2rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+}
+
+@keyframes logoWheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes logoBatteryGlow {
+    0%, 100% { 
+        box-shadow: 0 0 10px var(--primary-color);
+        background: var(--primary-color);
+    }
+    50% { 
+        box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color);
+        background: var(--secondary-color);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    box-shadow: 0 0 6px var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.contact-info i {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all var(--transition-normal);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        padding: 2rem;
+        transition: left var(--transition-normal);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
