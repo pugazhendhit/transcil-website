@@ -49,162 +49,149 @@
         </div>
     </nav>
 
-    <!-- Hero Slider Section -->
+    <!-- Hero Section -->
     <section class="hero-slider" id="home">
-        <div class="slider-container">
-            <!-- Slide 1: Company Introduction -->
-            <div class="slide active">
-                <div class="slide-background" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #7c3aed 100%);"></div>
-                <div class="bike-showcase-hero">
-                    <img src="assets/images/Velocil-Eh.png" alt="TRANSCIL Velocil EH Electric Scooter" class="hero-bike-image">
-                </div>
-                <div class="slide-content">
-                    <div class="slide-subtitle">WELCOME TO TRANSCIL</div>
-                    <h1 class="slide-title">India's Leading EV Bike Fleet Solution Provider</h1>
-                    <p class="slide-description">
-                        Building India's most reliable electric two-wheeler fleet network across metro cities with smart,
-                        sustainable, and scalable EV bike operations. Carries with Comfort...Always.
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <!-- Left Content -->
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i>
+                        EV Manufacturer & Fleet Provider
+                    </div>
+                    <h1 class="hero-main-title">Smart Electric Mobility for Modern India</h1>
+                    <p class="hero-main-description">
+                        TRANSCIL delivers premium electric two-wheelers and comprehensive fleet solutions
+                        across metro cities. We manufacture high-quality EV bikes and provide flexible
+                        rental services for businesses of all sizes.
                     </p>
-                    <div class="slide-cta">
-                        <a href="#services" class="slide-btn slide-btn-primary">Explore Services</a>
-                        <a href="#contact" class="slide-btn slide-btn-secondary">Partner With Us</a>
+
+                    <!-- Key Features -->
+                    <div class="hero-features">
+                        <div class="hero-feature-item">
+                            <i class="fas fa-industry"></i>
+                            <div>
+                                <h3>Manufacturing</h3>
+                                <p>State-of-the-art EV production facility</p>
+                            </div>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-network-wired"></i>
+                            <div>
+                                <h3>Fleet Rental</h3>
+                                <p>Scalable solutions for enterprises</p>
+                            </div>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h3>Sustainable</h3>
+                                <p>100% electric, zero emissions</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="slide-stats">
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="500">500</div>
-                            <div class="stat-label-slider">EV Fleet</div>
+
+                    <!-- CTAs -->
+                    <div class="hero-cta-group">
+                        <a href="#services" class="slide-btn slide-btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Explore Services
+                        </a>
+                        <a href="#contact" class="slide-btn slide-btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            Contact Sales
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="hero-quick-stats">
+                        <div class="quick-stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">EV Fleet</span>
                         </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="10000">10,000</div>
-                            <div class="stat-label-slider">Happy Riders</div>
+                        <div class="quick-stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Metro Cities</span>
                         </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="25000">25,000</div>
-                            <div class="stat-label-slider">Battery Swaps</div>
+                        <div class="quick-stat">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Partners</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Right Content - Bike Models Showcase -->
+                <div class="hero-right">
+                    <div class="bikes-showcase">
+                        <!-- Velocil EH Card -->
+                        <div class="bike-card velocil-card">
+                            <div class="bike-card-header">
+                                <span class="bike-badge">Premium Model</span>
+                                <h3>Velocil EH</h3>
+                            </div>
+                            <div class="bike-image-wrapper">
+                                <img src="assets/images/Velocil-Eh.png" alt="TRANSCIL Velocil EH" class="bike-product-image">
+                            </div>
+                            <div class="bike-specs-grid">
+                                <div class="spec-box">
+                                    <span class="spec-value">70-110km</span>
+                                    <span class="spec-label">Range</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">55 km/h</span>
+                                    <span class="spec-label">Max Speed</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">60V LFP</span>
+                                    <span class="spec-label">Battery</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">3-6 hrs</span>
+                                    <span class="spec-label">Charging</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ellod Plus Card -->
+                        <div class="bike-card ellod-card">
+                            <div class="bike-card-header">
+                                <span class="bike-badge cargo">Cargo Special</span>
+                                <h3>Ellod Plus</h3>
+                            </div>
+                            <div class="bike-image-wrapper">
+                                <img src="assets/images/Ellod-Plus.png" alt="TRANSCIL Ellod Plus" class="bike-product-image">
+                            </div>
+                            <div class="bike-specs-grid">
+                                <div class="spec-box">
+                                    <span class="spec-value">105-130km</span>
+                                    <span class="spec-label">Range</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">25 km/h</span>
+                                    <span class="spec-label">Max Speed</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">250 kg</span>
+                                    <span class="spec-label">Load Capacity</span>
+                                </div>
+                                <div class="spec-box">
+                                    <span class="spec-value">5-6 hrs</span>
+                                    <span class="spec-label">Charging</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View All Models Link -->
+                    <a href="pages/bike-models.html" class="view-all-models">
+                        View All Models & Specifications
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-
-            <!-- Slide 2: Manufacturing Excellence -->
-            <div class="slide">
-                <div class="slide-background" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #f97316 100%);"></div>
-                <div class="bike-showcase-hero">
-                    <img src="assets/images/Ellod-Plus.png" alt="TRANSCIL Ellod Plus Electric Cargo Scooter" class="hero-bike-image">
-                </div>
-                <div class="slide-content">
-                    <div class="slide-subtitle">MANUFACTURING EXCELLENCE</div>
-                    <h1 class="slide-title">Premium EV Bike Manufacturing</h1>
-                    <p class="slide-description">
-                        State-of-the-art manufacturing facility producing high-quality electric two-wheelers designed
-                        for Indian roads and climate. Built tough, engineered smart, delivered perfect.
-                    </p>
-                    <div class="slide-cta">
-                        <a href="pages/bike-models.html" class="slide-btn slide-btn-primary">View Our Models</a>
-                        <a href="#contact" class="slide-btn slide-btn-secondary">Request Quote</a>
-                    </div>
-                    <div class="slide-stats">
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="120">120</div>
-                            <div class="stat-label-slider">KM Range</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="70">70</div>
-                            <div class="stat-label-slider">KM/H Speed</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="3">3</div>
-                            <div class="stat-label-slider">Year Warranty</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3: Fleet Rentals -->
-            <div class="slide">
-                <div class="slide-background" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);"></div>
-                <div class="bike-showcase-hero">
-                    <img src="assets/images/Velocil-Eh.png" alt="TRANSCIL Fleet EV Bikes" class="hero-bike-image">
-                </div>
-                <div class="slide-content">
-                    <div class="slide-subtitle">FLEET-AS-A-SERVICE</div>
-                    <h1 class="slide-title">Scalable EV Bike Fleet Solutions</h1>
-                    <p class="slide-description">
-                        Flexible rental plans for businesses of all sizes. From single two-wheeler to enterprise fleets,
-                        we provide comprehensive EV bike rental solutions with maintenance and support included.
-                    </p>
-                    <div class="slide-cta">
-                        <a href="#services" class="slide-btn slide-btn-primary">Fleet Plans</a>
-                        <a href="#contact" class="slide-btn slide-btn-secondary">Get Started</a>
-                    </div>
-                    <div class="slide-stats">
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="150">150+</div>
-                            <div class="stat-label-slider">Partners</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="5">5</div>
-                            <div class="stat-label-slider">Metro Cities</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="100">100%</div>
-                            <div class="stat-label-slider">Electric</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 4: Sustainability Mission -->
-            <div class="slide">
-                <div class="slide-background" style="background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);"></div>
-                <div class="bike-showcase-hero">
-                    <img src="assets/images/Ellod-Plus.png" alt="TRANSCIL Sustainable EV Bikes" class="hero-bike-image">
-                </div>
-                <div class="slide-content">
-                    <div class="slide-subtitle">SUSTAINABLE FUTURE</div>
-                    <h1 class="slide-title">Zero Emissions, Maximum Impact</h1>
-                    <p class="slide-description">
-                        Committed to reducing carbon footprint and building a sustainable future for India.
-                        Every electric bike ride with TRANSCIL contributes to cleaner air and a healthier planet.
-                    </p>
-                    <div class="slide-cta">
-                        <a href="#milestones" class="slide-btn slide-btn-primary">Our Impact</a>
-                        <a href="#contact" class="slide-btn slide-btn-secondary">Join The Movement</a>
-                    </div>
-                    <div class="slide-stats">
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="50">50</div>
-                            <div class="stat-label-slider">Tons CO₂ Saved</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="1000000">1M+</div>
-                            <div class="stat-label-slider">KM Traveled</div>
-                        </div>
-                        <div class="stat-item-slider">
-                            <div class="stat-number-slider" data-count="0">0</div>
-                            <div class="stat-label-slider">Emissions</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="slider-arrow prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="slider-arrow next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <!-- Slider Dots -->
-        <div class="slider-controls">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services" id="services">
