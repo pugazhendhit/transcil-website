@@ -10,8 +10,7 @@
 
 /* Layout Components */
 @import url('navbar.css');
-@import url('hero.css');
-@import url('slider.css');
+@import url('hero-clean.css');
 @import url('footer.css');
 
 /* UI Components */
