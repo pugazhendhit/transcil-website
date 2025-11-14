@@ -1,0 +1,934 @@
+/*
+ * App Download Banner Section
+ * Clean, modern design matching TRANSCIL theme
+ */
+
+/* ===== App Banner Section ===== */
+.app-banner {
+    position: relative;
+    padding: 120px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.app-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(0, 177, 79, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 211, 95, 0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.app-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.app-banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* ===== Left Content ===== */
+.app-banner-content {
+    color: var(--text-primary);
+}
+
+/* ===== App Features List ===== */
+.app-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+    margin-top: 40px;
+}
+
+.app-feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.app-feature-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.1);
+    transform: translateY(-2px);
+}
+
+.app-feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.app-feature-icon i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.app-feature-text h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.app-feature-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ===== App Store Download Buttons ===== */
+.app-store-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.store-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    border: 2px solid #000000;
+}
+
+.store-download-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.store-download-btn .store-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.store-download-btn:hover .store-icon {
+    filter: brightness(0);
+}
+
+.store-download-btn .store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.store-download-btn .download-text {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.store-download-btn .store-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+/* ===== Mockup Wrapper ===== */
+.mockup-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===== Download Section ===== */
+.download-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.download-now-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.download-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.4);
+}
+
+/* ===== Download Buttons ===== */
+.app-download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.app-store-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 2px solid var(--text-primary);
+    padding: 14px 28px;
+    border-radius: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.app-store-btn:hover {
+    background: var(--text-primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.app-store-btn .store-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.app-store-btn.logo-only {
+    min-width: auto;
+    width: 70px;
+    height: 70px;
+    padding: 18px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-store-btn.logo-only .store-logo-large {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%);
+}
+
+.app-store-btn.logo-only:hover .store-logo-large {
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
+.app-store-btn .store-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ===== Phone Mockup ===== */
+.app-banner-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    position: relative;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.phone-frame {
+    width: 340px;
+    height: 700px;
+    background: #f9fafb;
+    border: 12px solid #1f2937;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 2px #e5e7eb,
+        0 20px 60px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    background: #1f2937;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+}
+
+.phone-screen {
+    width: 100%;
+    flex: 1;
+    background: #f8f9fa;
+    padding: 45px 16px 0;
+    overflow-y: auto;
+    position: relative;
+}
+
+.phone-screen::-webkit-scrollbar {
+    width: 3px;
+}
+
+.phone-screen::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.phone-screen::-webkit-scrollbar-thumb {
+    background: rgba(0, 177, 79, 0.3);
+    border-radius: 10px;
+}
+
+/* ===== App Screen Header ===== */
+.app-screen-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-logo-mini {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-logo-mini i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.app-brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    flex: 1;
+}
+
+.header-actions {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-actions i {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+}
+
+/* ===== User Status Card ===== */
+.user-status-card {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.status-badge {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid #e5e7eb;
+}
+
+.status-badge.verified {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(0, 177, 79, 0.05);
+}
+
+.status-badge i {
+    font-size: 1rem;
+}
+
+.user-points {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.user-points i {
+    font-size: 1rem;
+}
+
+/* ===== Location Selector ===== */
+.location-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.location-selector i:first-child {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.location-selector span {
+    flex: 1;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.location-selector i:last-child {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+/* ===== Quick Actions ===== */
+.quick-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.quick-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-action-btn i {
+    font-size: 0.9rem;
+}
+
+.quick-action-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* ===== Bikes Section ===== */
+.bikes-section {
+    margin-bottom: 16px;
+}
+
+.section-header-mini {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.section-header-mini h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bike-count {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: #f3f4f6;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ===== Enhanced Bike Cards ===== */
+.bike-card-enhanced {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.bike-card-enhanced:hover {
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.15);
+    transform: translateY(-2px);
+}
+
+.bike-image-real {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    overflow: hidden;
+}
+
+.bike-image-real img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bike-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 177, 79, 0.1), rgba(0, 211, 95, 0.1));
+}
+
+.bike-image-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.bike-badge-top {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bike-badge-top.popular {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.bike-content {
+    padding: 14px;
+}
+
+.bike-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bike-header h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bike-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #fef3c7;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.bike-rating i {
+    color: #f59e0b;
+    font-size: 0.75rem;
+}
+
+.bike-rating span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #92400e;
+}
+
+.bike-specs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: #f9fafb;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.spec-item i {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.spec-item span {
+    font-weight: 600;
+}
+
+.bike-location-hub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    padding: 8px;
+    background: #f3f4f6;
+    border-radius: 8px;
+}
+
+.bike-location-hub i {
+    color: #6366f1;
+}
+
+.bike-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.bike-price-new {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.bike-price-new .price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.bike-price-new .period {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.book-btn-new {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn-new:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 177, 79, 0.3);
+}
+
+.book-btn-new i {
+    font-size: 0.85rem;
+}
+
+/* ===== Bottom Navigation ===== */
+.bottom-nav {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 16px;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 10px;
+}
+
+.nav-item i {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.nav-item span {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.nav-item.active {
+    background: rgba(0, 177, 79, 0.1);
+}
+
+.nav-item.active i,
+.nav-item.active span {
+    color: var(--primary-color);
+}
+
+/* ===== Floating Elements ===== */
+.floating-element {
+    position: absolute;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-element i {
+    font-size: 1.25rem;
+}
+
+.floating-element span {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.location-pin {
+    top: 10%;
+    right: -20px;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.location-pin i {
+    color: var(--primary-color);
+}
+
+.battery-status {
+    bottom: 25%;
+    left: -30px;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.battery-status i {
+    color: var(--accent-color);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+    .mockup-wrapper {
+        gap: 30px;
+    }
+
+    .download-now-btn {
+        font-size: 1rem;
+        padding: 14px 40px;
+    }
+
+    .app-store-btn {
+        min-width: 160px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .app-banner-grid {
+        gap: 60px;
+    }
+
+    .mockup-wrapper {
+        gap: 24px;
+    }
+
+    .phone-frame {
+        width: 300px;
+        height: 620px;
+    }
+
+    .download-now-btn {
+        font-size: 0.95rem;
+        padding: 12px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-banner {
+        padding: 80px 0;
+    }
+
+    .app-banner-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .app-banner-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .app-features-list {
+        width: 100%;
+    }
+
+    .app-feature-item {
+        text-align: left;
+    }
+
+    .app-store-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mockup-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .download-section {
+        align-items: center;
+    }
+
+    .app-download-buttons {
+        align-items: center;
+    }
+
+    .phone-frame {
+        width: 320px;
+        height: 650px;
+    }
+
+    .floating-element {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-store-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .store-download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .app-download-buttons {
+        width: 100%;
+    }
+
+    .app-store-btn {
+        width: 100%;
+    }
+
+    .download-now-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .phone-frame {
+        width: 280px;
+        height: 570px;
+    }
+
+    .app-feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app-feature-icon i {
+        font-size: 1.25rem;
+    }
+}

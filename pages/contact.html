@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TRANSCIL</title>
+    <meta name="description" content="Get in touch with TRANSCIL for EV fleet solutions. Contact us for sustainable electric vehicle fleet management across India's metro cities.">
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: heroFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, -50px) rotate(180deg); }
+        }
+
+        .contact-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .contact-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-page {
+            padding: 80px 0;
+            background: #f9fafb;
+            min-height: 600px;
+        }
+
+        .contact {
+            padding: 0;
+            background: transparent;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fffe 100%);
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 177, 79, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info:hover {
+            border-color: rgba(0, 177, 79, 0.2);
+            box-shadow: 0 8px 40px rgba(0, 177, 79, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .contact-info:hover::before {
+            opacity: 1;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-info .info-subtitle {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        .contact-items-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-item:hover {
+            background: linear-gradient(135deg, rgba(0, 177, 79, 0.02), rgba(0, 211, 95, 0.02));
+            border-color: rgba(0, 177, 79, 0.1);
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0, 177, 79, 0.06);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #ffffff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(0, 177, 79, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .contact-icon::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 16px;
+            opacity: 0;
+            z-index: -1;
+            filter: blur(8px);
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.05) rotate(-3deg);
+            box-shadow: 0 6px 20px rgba(0, 177, 79, 0.3);
+        }
+
+        .contact-item:hover .contact-icon::after {
+            opacity: 0.4;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-details h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-details p {
+            font-size: 0.98rem;
+            color: #4b5563;
+            margin: 0 0 8px 0;
+            line-height: 1.7;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item:hover .contact-details p {
+            color: #374151;
+        }
+
+        .contact-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-details a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-color);
+            transform: translateX(2px);
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: sticky;
+            top: 100px;
+        }
+
+        .contact-form:hover {
+            border-color: rgba(0, 177, 79, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 177, 79, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-form .form-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(0, 177, 79, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+            max-height: 300px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 177, 79, 0.25);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 177, 79, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 50px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 2px solid #f0f0f0;
+            grid-column: 1 / -1;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        /* Social Links in Contact */
+        .contact-social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .contact-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border-radius: 12px;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1.5px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-social-links a:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 177, 79, 0.15);
+        }
+
+        .contact-social-links a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-social-links a i,
+        .contact-social-links a span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .contact-social-links a:hover i,
+        .contact-social-links a:hover span {
+            color: #ffffff;
+        }
+
+        .contact-social-links a i {
+            font-size: 1.15rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 32px 28px;
+            }
+
+            .contact-form {
+                position: static;
+            }
+
+            .map-section iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 120px 0 40px;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 28px 20px;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                gap: 14px;
+                padding-bottom: 20px;
+            }
+
+            .contact-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .contact-items-wrapper {
+                gap: 20px;
+            }
+
+            .map-section iframe {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="modern-logo">
+                    <div class="logo-text">
+                        <div class="brand-name">TRANSCIL</div>
+                        <div class="brand-tagline">Carries with Comfort...Always</div>
+                    </div>
+                    <!-- E-Bike Icon Badge -->
+                    <div class="ebike-badge">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="bike-models.html" class="nav-link">Bike Models</a>
+                <a href="partners.html" class="nav-link">Partner With Us</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
+                <a href="leadership.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <a href="../index.html#app-download" class="header-download-btn">
+                <div class="download-btn-content">
+                    <span class="download-btn-text">Download</span>
+                    <span class="download-btn-app">TRANSCIL APP</span>
+                </div>
+                <div class="download-btn-shine"></div>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Let's discuss how TRANSCIL can transform your fleet operations</p>
+        </div>
+    </section>
+
+    <!-- Contact Page Content -->
+    <section class="contact-page">
+        <div class="container">
+            <section class="contact">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <p class="info-subtitle">Get in touch with us for any inquiries or support</p>
+                        <div class="contact-items-wrapper">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Address</h3>
+                                <p>Survey No 193, Electrical Vehicle Manufacturers Company, Phase-IV, Part Ida, Cherlapalli, Hyderabad, Secunderabad, Telangana 500051</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>+91 80193 55656</p>
+                                <p>+91 81066 20333</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@transcil.com" style="color: inherit; text-decoration: none;">info@transcil.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Follow Us</h3>
+                                <div class="contact-social-links">
+                                    <a href="https://www.facebook.com/TranscilRides" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/transcilrides" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i> <span>Instagram</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/transcilrides" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
+                                    </a>
+                                    <a href="https://twitter.com/TranscilRides" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-twitter"></i> <span>Twitter</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h2>Send us a Message</h2>
+                        <p class="form-subtitle">Fill out the form below and we'll get back to you shortly</p>
+                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Your Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <input type="hidden" name="_to" value="info@transcil.com">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - TRANSCIL">
+                            <input type="hidden" name="_next" value="thank-you.html">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                </span>
+                            </button>
+                        </form>
+                        <div id="formMessage" style="display: none; margin-top: 20px; padding: 16px; border-radius: 12px; text-align: center; font-weight: 600;"></div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="map-section">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.5883085!3d17.4572367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b091c2e8b85%3A0x8a4e6d9e8c8c8c8c!2sCherlapalli%2C%20Hyderabad%2C%20Telangana%20500051!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="TRANSCIL Office Location - Cherlapalli, Hyderabad">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <div class="modern-logo">
+                            <div class="logo-text">
+                                <div class="brand-name">TRANSCIL</div>
+                                <div class="brand-tagline">Carries with Comfort...Always</div>
+                            </div>
+                            <!-- E-Bike Icon Badge -->
+                            <div class="ebike-badge">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>EV Manufacturer & Fleet Rental Provider. Revolutionizing mobility for the modern business with smart, sustainable, and scalable electric vehicle solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="leadership.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="bike-models.html">EV Bike Models</a></li>
+                        <li><a href="../index.html#services">Fleet-as-a-Service</a></li>
+                        <li><a href="../index.html#services">Metro-Connected Deliveries</a></li>
+                        <li><a href="../index.html#services">Fleet Tracking Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 80193 55656</li>
+                        <li><i class="fas fa-envelope"></i> info@transcil.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TRANSCIL. All rights reserved. | Powered by CAL-ON EV</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Contact Form Handler -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const btnText = form.querySelector('.btn-text');
+            const btnLoading = form.querySelector('.btn-loading');
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // Get form data
+            const formData = {
+                name: form.querySelector('input[name="name"]').value,
+                email: form.querySelector('input[name="email"]').value,
+                phone: form.querySelector('input[name="phone"]').value,
+                message: form.querySelector('textarea[name="message"]').value
+            };
+
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+
+            // Create mailto link as fallback
+            const subject = encodeURIComponent('New Contact Form Submission - TRANSCIL');
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone}\n\n` +
+                `Message:\n${formData.message}`
+            );
+
+            // Try to open email client
+            window.location.href = `mailto:info@transcil.com?subject=${subject}&body=${body}`;
+
+            // Show success message after a short delay
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline-block';
+                btnLoading.style.display = 'none';
+
+                formMessage.style.display = 'block';
+                formMessage.style.background = 'linear-gradient(135deg, rgba(0, 177, 79, 0.1), rgba(0, 211, 95, 0.1))';
+                formMessage.style.color = '#00B14F';
+                formMessage.style.border = '2px solid rgba(0, 177, 79, 0.3)';
+                formMessage.textContent = 'Your email client has been opened. Please send the email to complete your inquiry.';
+
+                // Reset form
+                form.reset();
+
+                // Hide message after 8 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 8000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSCIL EV Bike Models - Smart Electric Vehicles</title>
+    <meta name="description" content="Explore TRANSCIL's range of electric bikes. Manufacturer and fleet rental provider of sustainable EV two-wheelers.">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        .bike-models-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            background: linear-gradient(180deg, var(--dark-bg), var(--darker-bg));
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .model-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .model-image {
+            height: 300px;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .model-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all var(--transition-slow);
+        }
+        
+        .model-card:hover .model-photo {
+            transform: scale(1.1);
+        }
+        
+        .model-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-2);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-lg);
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .model-info {
+            padding: 2rem;
+        }
+        
+        .model-name {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .model-tagline {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .model-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+        }
+        
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <!-- Modern Shiny Logo -->
+                <div class="modern-logo">
+                    <div class="logo-text">
+                        <div class="brand-name">TRANSCIL</div>
+                        <div class="brand-tagline">Carries with Comfort...Always</div>
+                    </div>
+                    <!-- E-Bike Icon Badge -->
+                    <div class="ebike-badge">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="bike-models.html" class="nav-link active">Bike Models</a>
+                <a href="partners.html" class="nav-link">Partner With Us</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
+                <a href="leadership.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="../index.html#app-download" class="header-download-btn">
+                <div class="download-btn-content">
+                    <span class="download-btn-text">Download</span>
+                    <span class="download-btn-app">TRANSCIL APP</span>
+                </div>
+                <div class="download-btn-shine"></div>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bike-models-hero">
+        <div class="container">
+            <h1 class="section-title" data-aos="fade-up">CAL-ON EV Fleet Models</h1>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">7 Premium Electric Vehicles | Manufactured by CAL-ON Industries | Available for Fleet Rental</p>
+            
+            <!-- Animated Bike Showcase -->
+            <div class="bike-showcase" data-aos="zoom-in" data-aos-delay="200">
+                <div class="bike-model">
+                    <div class="ev-bike">
+                        <div class="bike-frame">
+                            <div class="bike-body">
+                                <div class="frame-line frame-top"></div>
+                                <div class="frame-line frame-diagonal"></div>
+                                <div class="frame-line frame-seat"></div>
+                                <div class="rear-fork"></div>
+                                <div class="front-fork"></div>
+                                <div class="bike-seat"></div>
+                                <div class="handlebar"></div>
+                                <div class="battery-pack">
+                                    <div class="battery-indicator"></div>
+                                    <div class="battery-level"></div>
+                                </div>
+                                <div class="bike-logo">TRANSCIL</div>
+                                <div class="headlight"></div>
+                                <div class="taillight"></div>
+                                <div class="spark"></div>
+                                <div class="spark"></div>
+                                <div class="spark"></div>
+                                <div class="wheel front-wheel"></div>
+                                <div class="wheel rear-wheel"></div>
+                            </div>
+                        </div>
+                        <div class="rider">
+                            <div class="rider-head"></div>
+                            <div class="rider-body"></div>
+                            <div class="rider-arm rider-arm-left"></div>
+                            <div class="rider-arm rider-arm-right"></div>
+                            <div class="rider-leg rider-leg-left"></div>
+                            <div class="rider-leg rider-leg-right"></div>
+                        </div>
+                        <div class="energy-flow">
+                            <div class="energy-particle" style="top: 40%; left: 60%;"></div>
+                            <div class="energy-particle" style="top: 50%; left: 65%;"></div>
+                            <div class="energy-particle" style="top: 45%; left: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="section-padding" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="models-grid">
+                <!-- Model 1: Velocil EH -->
+                <div class="model-card" data-aos="fade-up">
+                    <div class="model-image">
+                        <div class="model-badge">Best Seller</div>
+                        <img src="../assets/images/velocil-eh-new.jpg" alt="Velocil EH - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Velocil EH</h2>
+                        <p class="model-tagline">High-performance electric scooter with premium features</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Range</span>
+                                <span class="spec-value">80-120 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value">50 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">60V 36Ah</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Motor Power</span>
+                                <span class="spec-value">1.8-3.6 kW</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Charging Time</span>
+                                <span class="spec-value">3.5-4 Hrs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price</span>
+                                <span class="spec-value">₹75,180+</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 2: Ellod Plus -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="model-image">
+                        <div class="model-badge">Heavy Duty</div>
+                        <img src="../assets/images/ellod-plus-new.jpg" alt="Ellod Plus - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Ellod Plus</h2>
+                        <p class="model-tagline">Electric two-wheeler loader for commercial use</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Range</span>
+                                <span class="spec-value">105-130 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value"><25 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">60V 48/60Ah</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">250 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Charging Time</span>
+                                <span class="spec-value">4.5-5 Hrs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price</span>
+                                <span class="spec-value">₹99,480+</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 3: Ellod 2.5 -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image">
+                        <div class="model-badge">Popular</div>
+                        <img src="../assets/images/ellod-2.5.jpg" alt="Ellod 2.5 - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Ellod 2.5</h2>
+                        <p class="model-tagline">Multiple variants, one smart choice</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Range</span>
+                                <span class="spec-value">60-150 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value"><25 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">60V 30-60Ah</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Load Capacity</span>
+                                <span class="spec-value">200 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Charging Time</span>
+                                <span class="spec-value">3-4 Hrs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price</span>
+                                <span class="spec-value">₹62,520+</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 4: Purecil FB -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="model-image">
+                        <div class="model-badge">Premium</div>
+                        <img src="../assets/images/purecil-fb.jpg" alt="Purecil FB - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Purecil FB</h2>
+                        <p class="model-tagline">Advanced electric scooter with smart features</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">Lithium Ion</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Features</span>
+                                <span class="spec-value">Smart Display</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type</span>
+                                <span class="spec-value">Scooter</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Brakes</span>
+                                <span class="spec-value">Disc</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 5: Ellod Elite -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="model-image">
+                        <div class="model-badge">Elite</div>
+                        <img src="../assets/images/ellod-elite.jpg" alt="Ellod Elite - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Ellod Elite</h2>
+                        <p class="model-tagline">Premium cargo electric vehicle</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">Lithium Ion</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type</span>
+                                <span class="spec-value">Cargo Loader</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Features</span>
+                                <span class="spec-value">Heavy Duty</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Brakes</span>
+                                <span class="spec-value">Drum</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 6: Elacil 2.5 -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="model-image">
+                        <div class="model-badge">Efficient</div>
+                        <img src="../assets/images/elacil-2.5.jpg" alt="Elacil 2.5 - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Elacil 2.5</h2>
+                        <p class="model-tagline">Compact and efficient electric solution</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">Lithium Ion</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type</span>
+                                <span class="spec-value">Scooter</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Features</span>
+                                <span class="spec-value">Compact Design</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Use Case</span>
+                                <span class="spec-value">Urban Mobility</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+
+                <!-- Model 7: Electrolly Smart -->
+                <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="model-image">
+                        <div class="model-badge">Smart</div>
+                        <img src="../assets/images/electrolly-smart.jpg" alt="Electrolly Smart - CAL-ON EV" class="model-photo">
+                    </div>
+                    <div class="model-info">
+                        <h2 class="model-name">Electrolly Smart</h2>
+                        <p class="model-tagline">Intelligent electric scooter with IoT connectivity</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Battery</span>
+                                <span class="spec-value">Lithium Ion</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Features</span>
+                                <span class="spec-value">IoT Enabled</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Connectivity</span>
+                                <span class="spec-value">GPS Tracking</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type</span>
+                                <span class="spec-value">Smart Scooter</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section-padding" style="background: var(--dark-bg);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Compare Models</h2>
+                <p class="section-subtitle">Find the perfect EV bike for your needs</p>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="100">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Velocil EH</th>
+                            <th>Ellod Plus</th>
+                            <th>Ellod 2.5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Range</td>
+                            <td>80-120 km</td>
+                            <td>105-130 km</td>
+                            <td>60-150 km</td>
+                        </tr>
+                        <tr>
+                            <td>Top Speed</td>
+                            <td>50 km/h</td>
+                            <td><25 km/h</td>
+                            <td><25 km/h</td>
+                        </tr>
+                        <tr>
+                            <td>Battery</td>
+                            <td>60V 36Ah</td>
+                            <td>60V 48/60Ah</td>
+                            <td>60V 30-60Ah</td>
+                        </tr>
+                        <tr>
+                            <td>Charging Time</td>
+                            <td>3.5-4 hours</td>
+                            <td>4.5-5 hours</td>
+                            <td>3-4 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Load Capacity</td>
+                            <td>145 kg</td>
+                            <td>250 kg</td>
+                            <td>200 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>₹75,180+</td>
+                            <td>₹99,480+</td>
+                            <td>₹62,520+</td>
+                        </tr>
+                        <tr>
+                            <td>Swappable Battery</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>GPS Tracking</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td>E-commerce Delivery</td>
+                            <td>Daily Commute</td>
+                            <td>Heavy Fleet Operations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: var(--darker-bg);">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" data-aos="fade-up">Ready to Go Electric?</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Contact us for bulk orders, fleet leasing, or custom requirements</p>
+            <div style="margin-top: 2rem;" data-aos="fade-up" data-aos-delay="200">
+                <a href="../index.html#contact" class="btn btn-primary" style="margin: 0 0.5rem;">Contact Sales</a>
+                <a href="../index.html#pricing" class="btn btn-secondary" style="margin: 0 0.5rem;">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <div class="logo-bike">
+                            <div class="logo-bike-wheel"></div>
+                            <div class="logo-bike-wheel"></div>
+                            <div class="logo-bike-frame"></div>
+                            <div class="logo-bike-battery"></div>
+                        </div>
+                        <span>TRANSCIL</span>
+                    </div>
+                    <p>Revolutionizing mobility for the modern business. EV Manufacturer and Fleet Rental Provider.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="bike-models.html">Bike Models</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">EV Manufacturing</a></li>
+                        <li><a href="#">Fleet Leasing</a></li>
+                        <li><a href="#">Metro-Connected Deliveries</a></li>
+                        <li><a href="#">Fleet Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Contact</h3>
+                    <p>+91 80193 55656</p>
+                    <p>info@transcil.com</p>
+                    <p>Hyderabad, Telangana</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Transcil Sustainable Services Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Modular JavaScript -->
+    <script src="../js/config.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+/* SIMPLE FIX - Just make text left-aligned */
+
+/* Remove centering from slides */
+.hero-slide {
+    display: block !important;
+    text-align: left !important;
+}
+
+/* Grid: 60% text left, 40% image right */
+.hero-main {
+    display: grid !important;
+    grid-template-columns: 60% 40% !important;
+    gap: 3rem !important;
+    text-align: left !important;
+}
+
+/* Left column - text */
+.hero-text-content {
+    text-align: left !important;
+}
+
+.hero-text-content * {
+    text-align: left !important;
+}
+
+/* Right column - images */
+.hero-visual-content {
+    justify-self: end !important;
+}
+
+/* Partnership benefits - left align */
+.partnership-benefits {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.benefit-card {
+    text-align: left !important;
+}
+
+.benefit-icon {
+    margin: 0 0 1rem 0 !important;
+}

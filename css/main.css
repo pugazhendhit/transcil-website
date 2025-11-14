@@ -10,26 +10,18 @@
 
 /* Layout Components */
 @import url('navbar.css');
-@import url('hero-ultra.css');
-@import url('hero-slider.css');
 @import url('footer.css');
-
-/* CRITICAL FIX: Alignment fix must come LAST to override all other hero styles */
-@import url('hero-alignment-fix.css');
 
 /* UI Components */
 @import url('buttons.css');
 @import url('services-ultra.css');
 @import url('team-ultra.css');
 @import url('about-impact-ultra.css');
+@import url('app-banner.css');
+@import url('why-choose-transcil.css');
+@import url('partners.css');
 @import url('components.css');
 
 /* Modern Animations */
 @import url('modern-animations.css');
-
-/* Animations (disabled bike animations) */
-/* @import url('bike-animations.css'); */
-
-/* ULTRA CRITICAL: This MUST be the absolute LAST import */
-@import url('hero-critical-fix.css');
 

@@ -174,21 +174,35 @@
     transform: translateX(3px);
 }
 
-/* E-Bike Icon */
-.ebike-icon {
+/* E-Bike Icon Badge */
+.ebike-badge {
     margin-left: 15px;
-    font-size: 2rem;
+    width: 52px;
+    height: 52px;
     background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 1px 4px rgba(0, 177, 79, 0.4));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 177, 79, 0.3);
     transition: all 0.3s ease;
+    position: relative;
 }
 
-.logo:hover .ebike-icon {
-    transform: scale(1.15) translateY(-2px);
-    filter: drop-shadow(0 3px 8px rgba(0, 177, 79, 0.5)) drop-shadow(0 0 12px rgba(0, 211, 95, 0.4));
+.ebike-badge i {
+    font-size: 1.75rem;
+    color: #ffffff !important;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: unset;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover .ebike-badge {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 177, 79, 0.4);
+    background: linear-gradient(135deg, #00D35F 0%, #00B14F 100%);
 }
 
 .logo-icon {
@@ -248,13 +262,7 @@
     animation: logoBatteryGlow 1.5s infinite;
 }
 
-.logo i {
-    font-size: 2rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: pulse 2s infinite;
-}
+/* Old logo icon styles - removed to avoid conflicts with ebike-badge */
 
 @keyframes logoWheelSpin {
     from { transform: rotate(0deg); }
@@ -303,6 +311,123 @@
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Header Download Button */
+.header-download-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+    border-radius: 50px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow:
+        0 4px 15px rgba(0, 177, 79, 0.3),
+        0 0 0 0 rgba(0, 211, 95, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: headerBtnPulse 2s ease-in-out infinite;
+}
+
+.header-download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.header-download-btn:hover::before {
+    left: 100%;
+}
+
+.download-btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.download-btn-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.download-btn-app {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.download-btn-shine {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 40px;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(30deg);
+    animation: headerBtnShine 3s ease-in-out infinite;
+}
+
+.header-download-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 8px 25px rgba(0, 177, 79, 0.4),
+        0 0 0 8px rgba(0, 211, 95, 0.1);
+    animation: none;
+}
+
+.header-download-btn:hover .download-btn-text {
+    letter-spacing: 1px;
+}
+
+.header-download-btn:hover .download-btn-app {
+    letter-spacing: 0.8px;
+}
+
+.header-download-btn:active {
+    transform: translateY(0) scale(1);
+}
+
+@keyframes headerBtnPulse {
+    0%, 100% {
+        box-shadow:
+            0 4px 15px rgba(0, 177, 79, 0.3),
+            0 0 0 0 rgba(0, 211, 95, 0.4);
+    }
+    50% {
+        box-shadow:
+            0 4px 20px rgba(0, 177, 79, 0.4),
+            0 0 0 4px rgba(0, 211, 95, 0.2);
+    }
+}
+
+@keyframes headerBtnShine {
+    0% {
+        right: -50%;
+    }
+    20% {
+        right: 150%;
+    }
+    100% {
+        right: 150%;
+    }
 }
 
 .contact-info {
@@ -356,6 +481,19 @@
         display: none;
     }
 
+    .header-download-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .download-btn-text {
+        font-size: 0.65rem;
+    }
+
+    .download-btn-app {
+        font-size: 0.9rem;
+    }
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -366,6 +504,20 @@
 
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-download-btn {
+        padding: 10px 16px;
+    }
+
+    .download-btn-text {
+        font-size: 0.6rem;
+    }
+
+    .download-btn-app {
+        font-size: 0.8rem;
     }
 }
 

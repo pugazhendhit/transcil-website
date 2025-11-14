@@ -1,0 +1,985 @@
+/* ===================================
+   HERO SLIDER - 3 SLIDES
+   =================================== */
+
+/* Slider Wrapper */
+.hero-slider-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 160px;
+    transition: height 0.6s ease;
+}
+
+/* Ensure all slides follow grid layout */
+.hero-slide .hero-main {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-slide .hero-text-content {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.hero-slide .hero-visual-content,
+.hero-slide .app-mockup-showcase,
+.hero-slide .partnership-visual,
+.hero-slide .manufacturing-visual {
+    justify-self: end !important;
+    align-items: flex-end !important;
+}
+
+/* Slide Base Styling */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    pointer-events: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: slideIn 0.8s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===================================
+   SLIDE 1: BIKE RENTAL + APP
+   =================================== */
+
+.hero-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.0625rem;
+    color: #2d2d2d;
+    font-weight: 600;
+    padding: 0.75rem 0;
+}
+
+.feature-item i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* App Mockup Showcase */
+.app-mockup-showcase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 550px;
+    width: 100%;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 560px;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    border-radius: 42px;
+    padding: 14px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 3;
+    animation: phonefloat 4s ease-in-out infinite;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 28px;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+}
+
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+@keyframes phonefloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Custom TRANSCIL App Screen */
+.app-screen-custom {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 30%, #E8F5E9 70%, #ffffff 100%);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    animation: appScreenFadeIn 1s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 177, 79, 0.1);
+}
+
+@keyframes appScreenFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+.app-screen-custom::-webkit-scrollbar {
+    width: 4px;
+}
+
+.app-screen-custom::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.app-screen-custom::-webkit-scrollbar-thumb {
+    background: rgba(0, 177, 79, 0.3);
+    border-radius: 2px;
+}
+
+.app-screen-custom::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 177, 79, 0.5);
+}
+
+/* App Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 177, 79, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.app-logo-text {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.app-user i {
+    font-size: 1.75rem;
+    color: var(--text-secondary);
+}
+
+/* Search/Location Bar */
+.app-search-bar {
+    margin: 1rem;
+    padding: 0.875rem 1rem;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.12);
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.app-search-bar:hover {
+    box-shadow: 0 8px 20px rgba(0, 177, 79, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+.app-search-bar i:first-child {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.app-search-bar span {
+    flex: 1;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.app-search-bar i:last-child {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Section Title */
+.app-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.app-section-title span:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bikes-count {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    background: rgba(0, 177, 79, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Bike Card */
+.app-bike-card {
+    margin: 0 1rem 1rem;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 8px 24px rgba(0, 177, 79, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 177, 79, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-bike-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 32px rgba(0, 177, 79, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color);
+}
+
+.bike-card-image {
+    position: relative;
+    height: 160px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 50%, #BBF7D0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bike-card-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 177, 79, 0.1), transparent 60%);
+}
+
+.bike-card-image img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+.bike-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.3);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.bike-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.bike-card-info {
+    padding: 1rem;
+}
+
+.bike-card-info h4 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.bike-specs-mini {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.bike-specs-mini span {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.bike-specs-mini i {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+}
+
+.bike-location-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.bike-location-mini i {
+    color: #EF4444;
+}
+
+.bike-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.price-amount {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.price-period {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.app-book-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-book-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.app-book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 177, 79, 0.35);
+}
+
+.app-book-btn:hover::before {
+    opacity: 1;
+}
+
+.app-book-btn:active {
+    transform: translateY(0);
+}
+
+/* Map Preview */
+.app-map-preview {
+    margin: 0 1rem 5rem;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px dashed rgba(0, 177, 79, 0.3);
+}
+
+.map-placeholder i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.map-placeholder span {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Bottom Navigation */
+.app-bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #E5E7EB;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.5rem 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-item i {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.nav-item span {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.nav-item.active i,
+.nav-item.active span {
+    color: var(--primary-color);
+}
+
+.nav-item:hover i,
+.nav-item:hover span {
+    color: var(--primary-color);
+}
+
+.bike-preview {
+    position: absolute;
+    right: -50px;
+    bottom: 50px;
+    width: 350px;
+    z-index: 2;
+}
+
+.preview-bike {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    animation: bikeFloat 5s ease-in-out infinite;
+}
+
+.app-badge {
+    position: absolute;
+    top: 80px;
+    left: -40px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 4;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.app-badge i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.app-badge span {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===================================
+   SLIDE 2: PARTNERSHIP
+   =================================== */
+
+.partnership-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.benefit-card {
+    text-align: left;
+    padding: 1.5rem;
+    background: rgba(0, 177, 79, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: rgba(0, 177, 79, 0.1);
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.benefit-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Partnership Visual */
+.partnership-visual {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.partner-stats-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-big {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-big .number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-big .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.partner-bike-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* ===================================
+   SLIDE 3: MANUFACTURING
+   =================================== */
+
+.manufacturing-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.mfg-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mfg-stat:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.15);
+    transform: translateX(8px);
+}
+
+.mfg-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.mfg-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.mfg-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.mfg-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Manufacturing Visual */
+.manufacturing-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.models-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.model-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    transition: all 0.3s ease;
+}
+
+.model-thumb:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.2);
+}
+
+.manufacturing-badge {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.0625rem;
+}
+
+.manufacturing-badge i {
+    font-size: 1.5rem;
+}
+
+/* ===================================
+   SLIDER NAVIGATION
+   =================================== */
+
+.slider-nav {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.slider-arrow {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid rgba(0, 177, 79, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+}
+
+.slider-arrow:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 177, 79, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 32px;
+    border-radius: 6px;
+    background: var(--primary-color);
+}
+
+.dot:hover {
+    background: var(--primary-color);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .partnership-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .bike-preview {
+        right: 0;
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider-wrapper {
+        min-height: auto;
+    }
+
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-features-list {
+        margin-bottom: 2rem;
+    }
+
+    .feature-item {
+        font-size: 0.9375rem;
+    }
+
+    .app-mockup-showcase {
+        height: 400px;
+    }
+
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+
+    .bike-preview {
+        display: none;
+    }
+
+    .app-badge {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .partnership-benefits {
+        gap: 1rem;
+    }
+
+    .manufacturing-stats {
+        gap: 1rem;
+    }
+
+    .mfg-stat {
+        padding: 1rem;
+    }
+
+    .mfg-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.25rem;
+    }
+
+    .mfg-number {
+        font-size: 1.5rem;
+    }
+
+    .models-grid-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-nav {
+        bottom: 1rem;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .btn-premium {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stat-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners - TRANSCIL</title>
+    <meta name="description" content="Read what our partners say about TRANSCIL's EV fleet solutions. Real experiences from businesses using our services.">
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        /* Partners Page Specific Styles */
+        .partners-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partners-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: heroFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, -50px) rotate(180deg); }
+        }
+
+        .partners-hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .partners-hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin: 0 0 24px 0;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .partners-hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.96);
+            margin: 0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .partners-page {
+            padding: 90px 0;
+            background: #fafbfc;
+        }
+
+        /* Override external CSS backgrounds */
+        .why-partner {
+            background: transparent !important;
+            padding: 0 0 80px 0 !important;
+        }
+
+        .partnership-opportunities {
+            background: transparent !important;
+        }
+
+        /* Partner Intro */
+        .partner-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: transparent !important;
+            padding: 0 !important;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(0, 177, 79, 0.1), rgba(0, 211, 95, 0.1));
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 177, 79, 0.2);
+        }
+
+        .section-heading {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Partner Stats Section */
+        .partner-stats {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            animation: statsFloat 10s ease-in-out infinite;
+        }
+
+        @keyframes statsFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(100px, 100px) scale(1.1); }
+        }
+
+        .partner-stats .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .partner-stats .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .partner-stats .section-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .partner-stats .section-heading {
+            color: #ffffff;
+        }
+
+        .partner-stats .highlight-text {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .testimonials {
+            padding: 0;
+            background: transparent;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 177, 79, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .author-image {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 4px 0;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 6px;
+        }
+
+        .testimonial-rating i {
+            color: #fbbf24;
+            font-size: 1.125rem;
+        }
+
+        /* Partner Stats Section */
+        .partner-stats {
+            background: #ffffff;
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 177, 79, 0.05), rgba(0, 211, 95, 0.05));
+            border-radius: 20px;
+            border: 2px solid rgba(0, 177, 79, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 12px 40px rgba(0, 177, 79, 0.15);
+        }
+
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 0 0 8px 0;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Become a Partner CTA */
+        .partner-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .partner-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+        }
+
+        .partner-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0 0 40px 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .partner-cta .btn {
+            padding: 18px 48px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            background: #ffffff;
+            color: var(--primary-color);
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .partner-cta .btn:hover {
+            background: transparent;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .partners-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .partners-hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-heading {
+                font-size: 2.2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partners-hero {
+                padding: 120px 0 50px;
+            }
+
+            .partners-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .partners-hero p {
+                font-size: 1rem;
+            }
+
+            .section-heading {
+                font-size: 1.8rem;
+            }
+
+            .section-tag {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .stat-card {
+                padding: 32px 24px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="modern-logo">
+                    <div class="logo-text">
+                        <div class="brand-name">TRANSCIL</div>
+                        <div class="brand-tagline">Carries with Comfort...Always</div>
+                    </div>
+                    <!-- E-Bike Icon Badge -->
+                    <div class="ebike-badge">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="bike-models.html" class="nav-link">Bike Models</a>
+                <a href="partners.html" class="nav-link active">Partner With Us</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
+                <a href="leadership.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="../index.html#app-download" class="header-download-btn">
+                <div class="download-btn-content">
+                    <span class="download-btn-text">Download</span>
+                    <span class="download-btn-app">TRANSCIL APP</span>
+                </div>
+                <div class="download-btn-shine"></div>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Partners Hero -->
+    <section class="partners-hero">
+        <div class="container">
+            <h1>Partner With Us</h1>
+            <p>Partnership Beyond Performance - Building the future of sustainable fleet operations together</p>
+        </div>
+    </section>
+
+    <!-- Partners Page Content -->
+    <section class="partners-page">
+        <div class="container">
+            <!-- Introduction Section -->
+            <div class="partner-intro">
+                <div class="section-tag">Collaboration</div>
+                <h2 class="section-heading">
+                    Let's Build <span class="highlight-text">Together</span>
+                </h2>
+                <p class="section-lead">
+                    At TRANSCIL, we believe in the power of strategic collaborations. As a leader in fleet operations,
+                    we're committed to creating partnerships grounded in trust, transparency, and shared growth.
+                </p>
+            </div>
+
+            <!-- Partnership Opportunities -->
+            <section class="partnership-opportunities">
+                <h2 class="section-heading" style="text-align: center; margin-bottom: 60px;">
+                    Partnership <span class="highlight-text">Opportunities</span>
+                </h2>
+                <div class="opportunities-grid">
+                    <div class="opportunity-card">
+                        <div class="opportunity-number">01</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-truck-moving"></i>
+                        </div>
+                        <h3>Fleet Operations Management</h3>
+                        <p>Partner with us to manage your entire fleet operations with cutting-edge technology and expert support. We handle everything from deployment to maintenance.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Complete vehicle lifecycle management</li>
+                            <li><i class="fas fa-check"></i> Real-time tracking and analytics</li>
+                            <li><i class="fas fa-check"></i> Predictive maintenance systems</li>
+                        </ul>
+                    </div>
+                    <div class="opportunity-card">
+                        <div class="opportunity-number">02</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Sustainability Alliances</h3>
+                        <p>Join us in creating eco-friendly transportation solutions that reduce environmental impact while maintaining operational efficiency and profitability.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Zero-emission fleet solutions</li>
+                            <li><i class="fas fa-check"></i> Carbon footprint reduction programs</li>
+                            <li><i class="fas fa-check"></i> Green certification support</li>
+                        </ul>
+                    </div>
+                    <div class="opportunity-card">
+                        <div class="opportunity-number">03</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Vendor & Service Collaborations</h3>
+                        <p>Expand your business by joining our network of trusted vendors and service providers supporting our growing fleet ecosystem.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Priority access to fleet projects</li>
+                            <li><i class="fas fa-check"></i> Long-term collaboration agreements</li>
+                            <li><i class="fas fa-check"></i> Co-marketing opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Partner Stats -->
+    <section class="partner-stats">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Our Impact</div>
+                <h2 class="section-heading">
+                    Trusted by <span class="highlight-text">Leading Businesses</span>
+                </h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Active Partners</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Fleet Vehicles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Tons CO2 Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Km Traveled</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Become a Partner CTA -->
+    <section class="partner-cta">
+        <div class="container">
+            <h2 data-aos="fade-up">Become a TRANSCIL Partner</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Join leading businesses transforming their fleet operations with sustainable EV solutions</p>
+            <a href="contact.html" class="btn" data-aos="fade-up" data-aos-delay="200">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <div class="modern-logo">
+                            <div class="logo-text">
+                                <div class="brand-name">TRANSCIL</div>
+                                <div class="brand-tagline">Carries with Comfort...Always</div>
+                            </div>
+                            <!-- E-Bike Icon Badge -->
+                            <div class="ebike-badge">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>EV Manufacturer & Fleet Rental Provider. Revolutionizing mobility for the modern business with smart, sustainable, and scalable electric vehicle solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="leadership.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="bike-models.html">EV Bike Models</a></li>
+                        <li><a href="../index.html#services">Fleet-as-a-Service</a></li>
+                        <li><a href="../index.html#services">Metro-Connected Deliveries</a></li>
+                        <li><a href="../index.html#services">Fleet Tracking Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 80193 55656</li>
+                        <li><i class="fas fa-envelope"></i> info@transcil.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TRANSCIL. All rights reserved. | Powered by CAL-ON EV</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
