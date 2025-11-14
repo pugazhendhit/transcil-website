@@ -10,12 +10,13 @@
 
 /* Layout Components */
 @import url('navbar.css');
-@import url('hero-business.css');
+@import url('hero-ultra.css');
 @import url('footer.css');
 
 /* UI Components */
 @import url('buttons.css');
-@import url('services.css');
+@import url('services-ultra.css');
+@import url('about-impact-ultra.css');
 @import url('components.css');
 
 /* Modern Animations */

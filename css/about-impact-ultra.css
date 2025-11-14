@@ -1,0 +1,507 @@
+/* ===================================
+   ABOUT SECTION - ULTRA MODERN
+   =================================== */
+
+.about-ultra {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.about-bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ffffff 50%, #DCFCE7 100%);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.about-ultra .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+/* About Content */
+.about-content {
+    max-width: 600px;
+}
+
+.section-tag.dark {
+    background: var(--primary-color);
+    color: white;
+}
+
+.about-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.about-lead {
+    font-size: 1.375rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.about-description {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+/* Core Values Grid */
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.6s backwards;
+}
+
+.value-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid #E5E7EB;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.value-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.15);
+}
+
+.value-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    transition: transform 0.4s ease;
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.value-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* About Visual */
+.about-visual {
+    position: relative;
+    animation: fadeInRight 1s ease 0.4s backwards;
+}
+
+.about-image-card {
+    position: relative;
+    background: white;
+    border-radius: 32px;
+    padding: 3rem;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 177, 79, 0.1);
+    overflow: hidden;
+}
+
+.about-bike-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    animation: bikeFloat 6s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.image-glow-effect {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 40%;
+    background: radial-gradient(ellipse, rgba(0, 177, 79, 0.25) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Floating Stat Cards */
+.floating-stat-card {
+    position: absolute;
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    border: 2px solid rgba(0, 177, 79, 0.15);
+    animation: floatCard 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+.floating-stat-card.top {
+    top: 10%;
+    right: -8%;
+}
+
+.floating-stat-card.bottom {
+    bottom: 15%;
+    left: -8%;
+    animation-delay: 2s;
+}
+
+.stat-icon-mini {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.stat-text-mini {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-lbl {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* ===================================
+   IMPACT SECTION - ULTRA MODERN
+   =================================== */
+
+.impact-ultra {
+    padding: 120px 0;
+    position: relative;
+    background: #FAFAFA;
+    overflow: hidden;
+}
+
+.impact-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 177, 79, 0.02) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(0, 177, 79, 0.02) 2px, transparent 2px);
+    background-size: 60px 60px;
+    z-index: 0;
+}
+
+.impact-ultra .container {
+    position: relative;
+    z-index: 1;
+}
+
+.impact-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem;
+}
+
+/* Impact Stats Grid */
+.impact-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.impact-stat-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 2px solid #E5E7EB;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+.impact-stat-card:nth-child(1) { animation-delay: 0.2s; }
+.impact-stat-card:nth-child(2) { animation-delay: 0.4s; }
+.impact-stat-card:nth-child(3) { animation-delay: 0.6s; }
+.impact-stat-card:nth-child(4) { animation-delay: 0.7s; }
+.impact-stat-card:nth-child(5) { animation-delay: 0.8s; }
+.impact-stat-card:nth-child(6) { animation-delay: 0.9s; }
+
+.impact-stat-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 177, 79, 0.15);
+}
+
+.impact-stat-card.large {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.impact-stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 177, 79, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.impact-stat-card:hover::before {
+    opacity: 1;
+}
+
+/* Large Card Styles */
+.impact-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.25);
+    transition: transform 0.5s ease;
+}
+
+.impact-stat-card:hover .impact-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.impact-number {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.impact-number .counter {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.impact-number .unit {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.impact-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.impact-visual-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 177, 79, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 4px;
+    transition: width 1.5s ease;
+    animation: barFillIn 1.5s ease 0.5s backwards;
+}
+
+@keyframes barFillIn {
+    from {
+        width: 0 !important;
+    }
+}
+
+/* Mini Card Styles */
+.impact-mini-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.impact-stat-card:hover .impact-mini-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.impact-mini-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.impact-mini-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .about-heading {
+        font-size: 3rem;
+    }
+
+    .core-values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .impact-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .impact-stat-card.large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-ultra,
+    .impact-ultra {
+        padding: 80px 0;
+    }
+
+    .about-heading {
+        font-size: 2.25rem;
+    }
+
+    .about-lead {
+        font-size: 1.25rem;
+    }
+
+    .core-values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-image-card {
+        padding: 2rem;
+    }
+
+    .floating-stat-card.top,
+    .floating-stat-card.bottom {
+        position: static;
+        margin-top: 1.5rem;
+    }
+
+    .impact-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-stat-card.large {
+        grid-column: span 1;
+    }
+
+    .impact-number .counter {
+        font-size: 2.5rem;
+    }
+
+    .impact-mini-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-heading {
+        font-size: 1.875rem;
+    }
+
+    .about-lead {
+        font-size: 1.125rem;
+    }
+
+    .about-image-card {
+        padding: 1.5rem;
+    }
+
+    .impact-stat-card {
+        padding: 2rem;
+    }
+
+    .impact-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        font-size: 1.75rem;
+    }
+}
