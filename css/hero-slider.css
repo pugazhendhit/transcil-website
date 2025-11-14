@@ -7,7 +7,8 @@
     position: relative;
     width: 100%;
     min-height: 75vh;
-    max-height: 85vh;
+    height: auto;
+    overflow: visible;
 }
 
 /* Slide Base Styling */
