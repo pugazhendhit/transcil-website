@@ -2,13 +2,13 @@
 class HeroSlider {
     constructor() {
         this.currentSlide = 0;
-        this.slides = document.querySelectorAll('.slide');
-        this.dots = document.querySelectorAll('.slider-dot');
+        this.slides = document.querySelectorAll('.hero-slide');
+        this.dots = document.querySelectorAll('.slider-nav .dot');
         this.prevBtn = document.querySelector('.slider-arrow.prev');
         this.nextBtn = document.querySelector('.slider-arrow.next');
         this.autoPlayInterval = null;
-        this.autoPlayDelay = 5000; // 5 seconds
-        
+        this.autoPlayDelay = 6000; // 6 seconds
+
         this.init();
     }
     
@@ -25,7 +25,7 @@ class HeroSlider {
         this.startAutoPlay();
         
         // Pause on hover
-        const sliderContainer = document.querySelector('.slider-container');
+        const sliderContainer = document.querySelector('.hero-slider-wrapper');
         if (sliderContainer) {
             sliderContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
             sliderContainer.addEventListener('mouseleave', () => this.startAutoPlay());
@@ -139,7 +139,7 @@ class HeroSlider {
     }
     
     addSwipeSupport() {
-        const sliderContainer = document.querySelector('.slider-container');
+        const sliderContainer = document.querySelector('.hero-slider-wrapper');
         if (!sliderContainer) return;
         
         let touchStartX = 0;
@@ -169,7 +169,25 @@ class HeroSlider {
 }
 
 // Initialize slider when DOM is loaded
+let heroSliderInstance;
 document.addEventListener('DOMContentLoaded', () => {
-    new HeroSlider();
+    heroSliderInstance = new HeroSlider();
 });
+
+// Global functions for onclick handlers
+function changeSlide(direction) {
+    if (heroSliderInstance) {
+        if (direction > 0) {
+            heroSliderInstance.nextSlide();
+        } else {
+            heroSliderInstance.prevSlide();
+        }
+    }
+}
+
+function goToSlide(index) {
+    if (heroSliderInstance) {
+        heroSliderInstance.goToSlide(index - 1); // Convert to 0-based index
+    }
+}
 

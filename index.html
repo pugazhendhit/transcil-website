@@ -49,7 +49,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Modern Visual Design -->
+    <!-- Hero Section - 3-Slide Carousel -->
     <section class="hero-section" id="home">
         <!-- Animated Gradient Background -->
         <div class="hero-gradient-bg"></div>
@@ -58,81 +58,238 @@
         <div class="hero-grid-overlay"></div>
 
         <div class="container">
-            <div class="hero-content">
-                <!-- Main Hero Content -->
-                <div class="hero-main">
-                    <div class="hero-text-content">
-                        <div class="hero-eyebrow">
-                            <span class="eyebrow-dot"></span>
-                            India's Premier EV Manufacturer
-                        </div>
-
-                        <h1 class="hero-headline">
-                            Electric Mobility<br/>
-                            <span class="gradient-text">Redefined</span>
-                        </h1>
-
-                        <p class="hero-description">
-                            Manufacturing premium electric vehicles and delivering scalable fleet solutions
-                            across India. Experience the future of sustainable transportation.
-                        </p>
-
-                        <div class="hero-stats-inline">
-                            <div class="stat-inline-item">
-                                <div class="stat-value">500+</div>
-                                <div class="stat-label">Active Fleet</div>
-                            </div>
-                            <div class="stat-inline-item">
-                                <div class="stat-value">5</div>
-                                <div class="stat-label">Metro Cities</div>
-                            </div>
-                            <div class="stat-inline-item">
-                                <div class="stat-value">150+</div>
-                                <div class="stat-label">Partners</div>
-                            </div>
-                        </div>
-
-                        <div class="hero-cta-group">
-                            <a href="#contact" class="btn-premium primary">
-                                <span>Get Started</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="pages/bike-models.html" class="btn-premium secondary">
-                                <span>Explore Models</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual-content">
-                        <div class="bike-showcase">
-                            <div class="bike-card-premium">
-                                <img src="assets/images/velocil-eh-new.jpg" alt="Velocil EH - CAL-ON EV" class="bike-image-main">
-                                <div class="bike-glow"></div>
+            <div class="hero-slider-wrapper">
+                <!-- Slide 1: Bike Rental + Mobile App -->
+                <div class="hero-slide active" data-slide="1">
+                    <div class="hero-main">
+                        <div class="hero-text-content">
+                            <div class="hero-eyebrow">
+                                <span class="eyebrow-dot"></span>
+                                Rent Electric Bikes from Our Hub
                             </div>
 
-                            <div class="floating-spec-card top-right">
-                                <div class="spec-icon">
-                                    <i class="fas fa-bolt"></i>
+                            <h1 class="hero-headline">
+                                Rent, Ride, Repeat<br/>
+                                <span class="gradient-text">Go Electric Today</span>
+                            </h1>
+
+                            <p class="hero-description">
+                                Download our app and rent premium CAL-ON EV bikes from your nearest hub.
+                                Flexible plans, zero maintenance, complete freedom. Available across 5 metro cities.
+                            </p>
+
+                            <div class="hero-features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Hourly, Daily & Monthly Plans</span>
                                 </div>
-                                <div class="spec-info">
-                                    <div class="spec-value">120km</div>
-                                    <div class="spec-name">Max Range</div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>GPS Tracking & Smart Lock</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>24/7 Support & Maintenance</span>
                                 </div>
                             </div>
 
-                            <div class="floating-spec-card bottom-left">
-                                <div class="spec-icon">
-                                    <i class="fas fa-gauge-high"></i>
+                            <div class="hero-cta-group">
+                                <a href="#" class="btn-premium primary">
+                                    <i class="fab fa-google-play"></i>
+                                    <span>Download App</span>
+                                </a>
+                                <a href="#contact" class="btn-premium secondary">
+                                    <span>Find Nearest Hub</span>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual-content">
+                            <div class="app-mockup-showcase">
+                                <div class="phone-mockup">
+                                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600" alt="TRANSCIL App" class="app-screen">
                                 </div>
-                                <div class="spec-info">
-                                    <div class="spec-value">65km/h</div>
-                                    <div class="spec-name">Top Speed</div>
+                                <div class="bike-preview">
+                                    <img src="assets/images/velocil-eh-new.jpg" alt="Velocil EH" class="preview-bike">
+                                </div>
+                                <div class="floating-badge app-badge">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Book in 60 seconds</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 2: Partnership Opportunities -->
+                <div class="hero-slide" data-slide="2">
+                    <div class="hero-main">
+                        <div class="hero-text-content">
+                            <div class="hero-eyebrow">
+                                <span class="eyebrow-dot"></span>
+                                Partnership Opportunities
+                            </div>
+
+                            <h1 class="hero-headline">
+                                Start Your Own<br/>
+                                <span class="gradient-text">EV Rental Business</span>
+                            </h1>
+
+                            <p class="hero-description">
+                                Partner with TRANSCIL and CAL-ON Industries to launch your EV rental hub.
+                                We provide vehicles, technology, training, and complete operational support.
+                            </p>
+
+                            <div class="partnership-benefits">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-motorcycle"></i>
+                                    </div>
+                                    <h4>Fleet Supply</h4>
+                                    <p>Premium bikes at wholesale rates</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-mobile-screen"></i>
+                                    </div>
+                                    <h4>Tech Platform</h4>
+                                    <p>White-label app & dashboard</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h4>Training & Support</h4>
+                                    <p>Complete business guidance</p>
+                                </div>
+                            </div>
+
+                            <div class="hero-cta-group">
+                                <a href="#contact" class="btn-premium primary">
+                                    <span>Become a Partner</span>
+                                    <i class="fas fa-handshake"></i>
+                                </a>
+                                <a href="#" class="btn-premium secondary">
+                                    <span>Download Brochure</span>
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual-content">
+                            <div class="partnership-visual">
+                                <div class="partner-stats-card">
+                                    <div class="stat-row">
+                                        <div class="stat-big">
+                                            <span class="number">70+</span>
+                                            <span class="label">Dealerships</span>
+                                        </div>
+                                        <div class="stat-big">
+                                            <span class="number">₹10L+</span>
+                                            <span class="label">Avg. Revenue</span>
+                                        </div>
+                                    </div>
+                                    <img src="assets/images/ellod-plus-new.jpg" alt="Fleet" class="partner-bike-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Manufacturing Capabilities -->
+                <div class="hero-slide" data-slide="3">
+                    <div class="hero-main">
+                        <div class="hero-text-content">
+                            <div class="hero-eyebrow">
+                                <span class="eyebrow-dot"></span>
+                                Manufactured by CAL-ON Industries
+                            </div>
+
+                            <h1 class="hero-headline">
+                                State-of-the-Art<br/>
+                                <span class="gradient-text">EV Manufacturing</span>
+                            </h1>
+
+                            <p class="hero-description">
+                                CAL-ON Industries operates a cutting-edge manufacturing facility producing
+                                7 premium electric vehicle models. Quality-certified, India-ready, built to last.
+                            </p>
+
+                            <div class="manufacturing-stats">
+                                <div class="mfg-stat">
+                                    <div class="mfg-icon">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="mfg-info">
+                                        <span class="mfg-number">50,000+</span>
+                                        <span class="mfg-label">Units/Year Capacity</span>
+                                    </div>
+                                </div>
+                                <div class="mfg-stat">
+                                    <div class="mfg-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="mfg-info">
+                                        <span class="mfg-number">ISO Certified</span>
+                                        <span class="mfg-label">Quality Standards</span>
+                                    </div>
+                                </div>
+                                <div class="mfg-stat">
+                                    <div class="mfg-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <div class="mfg-info">
+                                        <span class="mfg-number">3 Years</span>
+                                        <span class="mfg-label">Warranty Coverage</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-cta-group">
+                                <a href="pages/bike-models.html" class="btn-premium primary">
+                                    <span>View All Models</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="#team" class="btn-premium secondary">
+                                    <span>Meet Our Team</span>
+                                    <i class="fas fa-users"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual-content">
+                            <div class="manufacturing-visual">
+                                <div class="models-grid-preview">
+                                    <img src="assets/images/velocil-eh-new.jpg" alt="Velocil EH" class="model-thumb">
+                                    <img src="assets/images/ellod-2.5.jpg" alt="Ellod 2.5" class="model-thumb">
+                                    <img src="assets/images/ellod-elite.jpg" alt="Ellod Elite" class="model-thumb">
+                                    <img src="assets/images/purecil-fb.jpg" alt="Purecil FB" class="model-thumb">
+                                </div>
+                                <div class="manufacturing-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Manufactured in India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-arrow prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                    </div>
+                    <button class="slider-arrow next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
 
                 <!-- Features Marquee -->
                 <div class="features-marquee">

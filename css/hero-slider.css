@@ -1,0 +1,522 @@
+/* ===================================
+   HERO SLIDER - 3 SLIDES
+   =================================== */
+
+/* Slider Wrapper */
+.hero-slider-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+}
+
+/* Slide Base Styling */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    pointer-events: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: slideIn 0.8s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===================================
+   SLIDE 1: BIKE RENTAL + APP
+   =================================== */
+
+.hero-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.feature-item i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+/* App Mockup Showcase */
+.app-mockup-showcase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 560px;
+    background: #1F2937;
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 3;
+    animation: phonefloat 4s ease-in-out infinite;
+}
+
+@keyframes phonefloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.app-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+}
+
+.bike-preview {
+    position: absolute;
+    right: -50px;
+    bottom: 50px;
+    width: 350px;
+    z-index: 2;
+}
+
+.preview-bike {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    animation: bikeFloat 5s ease-in-out infinite;
+}
+
+.app-badge {
+    position: absolute;
+    top: 80px;
+    left: -40px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 4;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.app-badge i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.app-badge span {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===================================
+   SLIDE 2: PARTNERSHIP
+   =================================== */
+
+.partnership-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 177, 79, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: rgba(0, 177, 79, 0.1);
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.benefit-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Partnership Visual */
+.partnership-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-stats-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-big {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-big .number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-big .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.partner-bike-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* ===================================
+   SLIDE 3: MANUFACTURING
+   =================================== */
+
+.manufacturing-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.mfg-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mfg-stat:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(0, 177, 79, 0.15);
+    transform: translateX(8px);
+}
+
+.mfg-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.mfg-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.mfg-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.mfg-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Manufacturing Visual */
+.manufacturing-visual {
+    position: relative;
+}
+
+.models-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.model-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    transition: all 0.3s ease;
+}
+
+.model-thumb:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 32px rgba(0, 177, 79, 0.2);
+}
+
+.manufacturing-badge {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.0625rem;
+}
+
+.manufacturing-badge i {
+    font-size: 1.5rem;
+}
+
+/* ===================================
+   SLIDER NAVIGATION
+   =================================== */
+
+.slider-nav {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.slider-arrow {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid rgba(0, 177, 79, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+}
+
+.slider-arrow:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 177, 79, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 32px;
+    border-radius: 6px;
+    background: var(--primary-color);
+}
+
+.dot:hover {
+    background: var(--primary-color);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .partnership-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .bike-preview {
+        right: 0;
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider-wrapper {
+        min-height: auto;
+    }
+
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-features-list {
+        margin-bottom: 2rem;
+    }
+
+    .feature-item {
+        font-size: 0.9375rem;
+    }
+
+    .app-mockup-showcase {
+        height: 400px;
+    }
+
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+
+    .bike-preview {
+        display: none;
+    }
+
+    .app-badge {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .partnership-benefits {
+        gap: 1rem;
+    }
+
+    .manufacturing-stats {
+        gap: 1rem;
+    }
+
+    .mfg-stat {
+        padding: 1rem;
+    }
+
+    .mfg-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.25rem;
+    }
+
+    .mfg-number {
+        font-size: 1.5rem;
+    }
+
+    .models-grid-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-nav {
+        bottom: 1rem;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .btn-premium {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stat-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
