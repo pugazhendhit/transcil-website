@@ -419,6 +419,7 @@
     border-top: 2px solid rgba(0, 177, 79, 0.1);
     border-bottom: 2px solid rgba(0, 177, 79, 0.1);
     position: relative;
+    margin-top: 6rem;
 }
 
 .marquee-track {
