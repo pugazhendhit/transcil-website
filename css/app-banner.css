@@ -514,6 +514,43 @@
     font-size: 0.7rem;
 }
 
+.map-view-section {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.map-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.legend-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-marker.green {
+    background: #22c55e;
+}
+
+.legend-marker.blue {
+    background: #3b82f6;
+}
+
 .user-points {
     display: flex;
     align-items: center;
@@ -582,6 +619,12 @@
     color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.quick-action-btn:hover {
+    background: #f9fafb;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
 }
 
 .quick-action-btn i {

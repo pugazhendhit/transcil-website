@@ -179,6 +179,74 @@
                                     </div>
                                 </div>
 
+                                <!-- Map View Section -->
+                                <div class="map-view-section" style="display:none;">
+                                    <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 180px; background: #e5e7eb; border-radius: 12px;">
+                                        <!-- Map Grid Lines -->
+                                        <line x1="0" y1="60" x2="300" y2="60" stroke="#d1d5db" stroke-width="1" opacity="0.5"/>
+                                        <line x1="0" y1="120" x2="300" y2="120" stroke="#d1d5db" stroke-width="1" opacity="0.5"/>
+                                        <line x1="100" y1="0" x2="100" y2="180" stroke="#d1d5db" stroke-width="1" opacity="0.5"/>
+                                        <line x1="200" y1="0" x2="200" y2="180" stroke="#d1d5db" stroke-width="1" opacity="0.5"/>
+
+                                        <!-- Roads -->
+                                        <path d="M 0 90 Q 75 85 150 90 T 300 90" stroke="#9ca3af" stroke-width="4" fill="none"/>
+                                        <path d="M 150 0 L 150 180" stroke="#9ca3af" stroke-width="3" fill="none"/>
+
+                                        <!-- Metro Station Icon -->
+                                        <g transform="translate(150, 90)">
+                                            <circle cx="0" cy="0" r="12" fill="#3b82f6"/>
+                                            <text x="0" y="5" font-family="Arial" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">M</text>
+                                        </g>
+
+                                        <!-- Bike Location Pin 1 -->
+                                        <g transform="translate(80, 50)">
+                                            <circle cx="0" cy="0" r="8" fill="#22c55e"/>
+                                            <path d="M 0 -8 Q -4 -12 0 -16 Q 4 -12 0 -8 Z" fill="#22c55e"/>
+                                            <circle cx="0" cy="-10" r="2" fill="#ffffff"/>
+                                        </g>
+
+                                        <!-- Bike Location Pin 2 -->
+                                        <g transform="translate(220, 70)">
+                                            <circle cx="0" cy="0" r="8" fill="#22c55e"/>
+                                            <path d="M 0 -8 Q -4 -12 0 -16 Q 4 -12 0 -8 Z" fill="#22c55e"/>
+                                            <circle cx="0" cy="-10" r="2" fill="#ffffff"/>
+                                        </g>
+
+                                        <!-- Bike Location Pin 3 -->
+                                        <g transform="translate(120, 130)">
+                                            <circle cx="0" cy="0" r="8" fill="#22c55e"/>
+                                            <path d="M 0 -8 Q -4 -12 0 -16 Q 4 -12 0 -8 Z" fill="#22c55e"/>
+                                            <circle cx="0" cy="-10" r="2" fill="#ffffff"/>
+                                        </g>
+
+                                        <!-- Bike Location Pin 4 -->
+                                        <g transform="translate(200, 130)">
+                                            <circle cx="0" cy="0" r="8" fill="#22c55e"/>
+                                            <path d="M 0 -8 Q -4 -12 0 -16 Q 4 -12 0 -8 Z" fill="#22c55e"/>
+                                            <circle cx="0" cy="-10" r="2" fill="#ffffff"/>
+                                        </g>
+
+                                        <!-- Bike Location Pin 5 (Your Location - Blue) -->
+                                        <g transform="translate(150, 100)">
+                                            <circle cx="0" cy="0" r="6" fill="#3b82f6" opacity="0.3"/>
+                                            <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+                                            <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+                                        </g>
+                                    </svg>
+
+                                    <!-- Map Legend -->
+                                    <div class="map-legend">
+                                        <div class="legend-item">
+                                            <div class="legend-marker green"></div>
+                                            <span>Available Bikes (4)</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <div class="legend-marker blue"></div>
+                                            <span>Your Location</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- Available Bikes Section -->
                                 <div class="bikes-section">
                                     <div class="section-header-mini">
@@ -877,7 +945,7 @@
 
     <!-- External Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Modular JavaScript -->
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
@@ -886,6 +954,34 @@
     <script src="js/slider.js"></script>
     <script src="js/forms.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Phone Mockup View Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapViewBtn = document.querySelector('.quick-action-btn:first-child');
+            const listViewBtn = document.querySelector('.quick-action-btn:last-child');
+            const mapViewSection = document.querySelector('.map-view-section');
+            const bikesSection = document.querySelector('.bikes-section');
+
+            if (mapViewBtn && listViewBtn && mapViewSection && bikesSection) {
+                // Map View Button Click
+                mapViewBtn.addEventListener('click', function() {
+                    mapViewBtn.classList.add('active');
+                    listViewBtn.classList.remove('active');
+                    mapViewSection.style.display = 'block';
+                    bikesSection.style.display = 'none';
+                });
+
+                // List View Button Click
+                listViewBtn.addEventListener('click', function() {
+                    listViewBtn.classList.add('active');
+                    mapViewBtn.classList.remove('active');
+                    bikesSection.style.display = 'block';
+                    mapViewSection.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
