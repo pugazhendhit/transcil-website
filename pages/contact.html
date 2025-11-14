@@ -17,9 +17,23 @@
         /* Contact Page Specific Styles */
         .contact-hero {
             padding: 140px 0 60px;
-            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            background: linear-gradient(135deg,
+                #f0fdf4 0%,
+                #dcfce7 20%,
+                #bbf7d0 40%,
+                #86efac 60%,
+                #4ade80 80%,
+                #22c55e 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 20s ease infinite;
             position: relative;
             overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .contact-hero::before {
@@ -29,7 +43,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
             animation: heroFloat 8s ease-in-out infinite;
         }
 
@@ -47,17 +61,19 @@
         .contact-hero h1 {
             font-size: 3.5rem;
             font-weight: 900;
-            color: #ffffff;
+            color: #0f172a;
             margin: 0 0 20px 0;
             line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
         }
 
         .contact-hero p {
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.95);
+            color: #374151;
             margin: 0;
             max-width: 600px;
             margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .contact-page {
@@ -128,92 +144,58 @@
             line-height: 1.6;
         }
 
+        /* Simple Contact List */
         .contact-items-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 40px;
         }
 
         .contact-item {
             display: flex;
-            gap: 20px;
             align-items: flex-start;
-            padding: 24px;
-            background: #ffffff;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .contact-item:hover {
-            background: linear-gradient(135deg, rgba(0, 177, 79, 0.02), rgba(0, 211, 95, 0.02));
-            border-color: rgba(0, 177, 79, 0.1);
-            transform: translateX(4px);
-            box-shadow: 0 4px 16px rgba(0, 177, 79, 0.06);
+            gap: 20px;
+            padding: 0;
+            background: transparent;
+            border: none;
         }
 
         .contact-icon {
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 14px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #ffffff;
             flex-shrink: 0;
             box-shadow: 0 4px 16px rgba(0, 177, 79, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .contact-icon::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 16px;
-            opacity: 0;
-            z-index: -1;
-            filter: blur(8px);
-            transition: opacity 0.3s ease;
-        }
-
-        .contact-item:hover .contact-icon {
-            transform: scale(1.05) rotate(-3deg);
-            box-shadow: 0 6px 20px rgba(0, 177, 79, 0.3);
-        }
-
-        .contact-item:hover .contact-icon::after {
-            opacity: 0.4;
         }
 
         .contact-details {
             flex: 1;
+            padding-top: 4px;
         }
 
         .contact-details h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #111827;
-            margin: 0 0 12px 0;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: #1f2937;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            color: #6b7280;
         }
 
         .contact-details p {
-            font-size: 0.98rem;
-            color: #4b5563;
-            margin: 0 0 8px 0;
+            font-size: 1rem;
+            color: #1f2937;
+            margin: 0 0 6px 0;
             line-height: 1.7;
-            transition: color 0.2s ease;
-        }
-
-        .contact-item:hover .contact-details p {
-            color: #374151;
+            font-weight: 500;
         }
 
         .contact-details p:last-child {
@@ -221,17 +203,46 @@
         }
 
         .contact-details a {
-            color: inherit;
+            color: #1f2937;
             text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            transition: color 0.2s ease;
         }
 
         .contact-details a:hover {
             color: var(--primary-color);
-            transform: translateX(2px);
+        }
+
+        /* Social Links Styling */
+        .contact-social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .contact-social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            color: #4b5563;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-social-links a:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        .contact-social-links a i {
+            font-size: 1.1rem;
         }
 
         .contact-form {
@@ -444,6 +455,27 @@
             }
         }
 
+        @media (max-width: 640px) {
+            .contact-item {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .contact-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 1.3rem;
+            }
+
+            .contact-social-links {
+                flex-direction: column;
+            }
+
+            .contact-social-links a {
+                justify-content: flex-start;
+            }
+        }
+
         @media (max-width: 480px) {
             .contact-hero {
                 padding: 120px 0 40px;
@@ -464,18 +496,17 @@
             }
 
             .contact-item {
-                gap: 14px;
-                padding-bottom: 20px;
+                padding: 20px 16px;
             }
 
             .contact-icon {
                 width: 44px;
                 height: 44px;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .contact-items-wrapper {
-                gap: 20px;
+                gap: 16px;
             }
 
             .map-section iframe {
@@ -540,56 +571,67 @@
                         <h2>Contact Information</h2>
                         <p class="info-subtitle">Get in touch with us for any inquiries or support</p>
                         <div class="contact-items-wrapper">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Address</h3>
-                                <p>Survey No 193, Electrical Vehicle Manufacturers Company, Phase-IV, Part Ida, Cherlapalli, Hyderabad, Secunderabad, Telangana 500051</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <p>+91 80193 55656</p>
-                                <p>+91 81066 20333</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p><a href="mailto:info@transcil.com" style="color: inherit; text-decoration: none;">info@transcil.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-share-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Follow Us</h3>
-                                <div class="contact-social-links">
-                                    <a href="https://www.facebook.com/TranscilRides" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
-                                    </a>
-                                    <a href="https://www.instagram.com/transcilrides" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-instagram"></i> <span>Instagram</span>
-                                    </a>
-                                    <a href="https://www.linkedin.com/company/transcilrides" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
-                                    </a>
-                                    <a href="https://twitter.com/TranscilRides" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-twitter"></i> <span>Twitter</span>
-                                    </a>
+                            <!-- Address -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Address</h3>
+                                    <p>Survey No 193, Electrical Vehicle Manufacturers Company, Phase-IV, Part Ida, Cherlapalli, Hyderabad, Secunderabad, Telangana 500051</p>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+918019355656">+91 80193 55656</a></p>
+                                    <p><a href="tel:+918106620333">+91 81066 20333</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@transcil.com">info@transcil.com</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Follow Us</h3>
+                                    <div class="contact-social-links">
+                                        <a href="https://www.facebook.com/TranscilRides" target="_blank" rel="noopener noreferrer">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                        <a href="https://www.instagram.com/transcilrides" target="_blank" rel="noopener noreferrer">
+                                            <i class="fab fa-instagram"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/transcilrides" target="_blank" rel="noopener noreferrer">
+                                            <i class="fab fa-linkedin-in"></i>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                        <a href="https://twitter.com/TranscilRides" target="_blank" rel="noopener noreferrer">
+                                            <i class="fab fa-twitter"></i>
+                                            <span>Twitter</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="contact-form">

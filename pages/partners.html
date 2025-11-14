@@ -17,9 +17,23 @@
         /* Partners Page Specific Styles */
         .partners-hero {
             padding: 140px 0 80px;
-            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            background: linear-gradient(135deg,
+                #f0fdf4 0%,
+                #dcfce7 20%,
+                #bbf7d0 40%,
+                #86efac 60%,
+                #4ade80 80%,
+                #22c55e 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 20s ease infinite;
             position: relative;
             overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .partners-hero::before {
@@ -29,7 +43,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
             animation: heroFloat 8s ease-in-out infinite;
         }
 
@@ -47,20 +61,22 @@
         .partners-hero h1 {
             font-size: 3.8rem;
             font-weight: 900;
-            color: #ffffff;
+            color: #0f172a;
             margin: 0 0 24px 0;
             line-height: 1.15;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
         }
 
         .partners-hero p {
             font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.96);
+            color: #374151;
             margin: 0;
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
             font-weight: 400;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .partners-page {
@@ -128,7 +144,15 @@
         /* Partner Stats Section */
         .partner-stats {
             padding: 90px 0;
-            background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
+            background: linear-gradient(135deg,
+                #f0fdf4 0%,
+                #dcfce7 20%,
+                #bbf7d0 40%,
+                #86efac 60%,
+                #4ade80 80%,
+                #22c55e 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 20s ease infinite;
             position: relative;
             overflow: hidden;
         }
@@ -140,7 +164,7 @@
             left: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
             animation: statsFloat 10s ease-in-out infinite;
         }
 

@@ -53,7 +53,41 @@
     </nav>
 
     <!-- About Hero Section -->
-    <section class="about-hero" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);">
+    <section class="about-hero" style="padding-top: 120px; padding-bottom: 60px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 20%, #bbf7d0 40%, #86efac 60%, #4ade80 80%, #22c55e 100%); background-size: 200% 200%; animation: gradientShift 20s ease infinite; position: relative; overflow: hidden;">
+        <style>
+            @keyframes gradientShift {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            .about-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image:
+                    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
+                z-index: 0;
+            }
+            .about-hero .container {
+                position: relative;
+                z-index: 1;
+            }
+            .about-hero .section-heading {
+                color: #0f172a !important;
+                text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+            }
+            .about-hero .highlight-text {
+                background: linear-gradient(135deg, #00b14f, #00d35f);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .about-hero .section-lead {
+                color: #374151 !important;
+                text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+            }
+        </style>
         <div class="container">
             <div class="about-hero-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
                 <div class="section-tag">About TRANSCIL</div>
