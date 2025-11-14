@@ -6,10 +6,12 @@ class HeroSlider {
         this.dots = document.querySelectorAll('.slider-nav .dot');
         this.prevBtn = document.querySelector('.slider-arrow.prev');
         this.nextBtn = document.querySelector('.slider-arrow.next');
+        this.sliderWrapper = document.querySelector('.hero-slider-wrapper');
         this.autoPlayInterval = null;
         this.autoPlayDelay = 6000; // 6 seconds
 
         this.init();
+        window.addEventListener('resize', () => this.updateSliderHeight());
     }
     
     init() {
@@ -75,6 +77,15 @@ class HeroSlider {
         
         // Animate numbers if present
         this.animateNumbers(this.slides[index]);
+        requestAnimationFrame(() => this.updateSliderHeight());
+    }
+    
+    updateSliderHeight() {
+        if (!this.sliderWrapper) return;
+        const activeSlide = this.slides[this.currentSlide];
+        if (!activeSlide) return;
+        const slideHeight = activeSlide.scrollHeight;
+        this.sliderWrapper.style.height = `${slideHeight}px`;
     }
     
     nextSlide() {
