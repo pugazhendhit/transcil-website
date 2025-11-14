@@ -6,7 +6,8 @@
 .hero-slider-wrapper {
     position: relative;
     width: 100%;
-    min-height: 90vh;
+    min-height: 75vh;
+    max-height: 85vh;
 }
 
 /* Slide Base Styling */
@@ -70,16 +71,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 500px;
 }
 
 .phone-mockup {
-    width: 280px;
-    height: 560px;
+    width: 260px;
+    height: 480px;
     background: #1F2937;
-    border-radius: 36px;
-    padding: 12px;
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+    border-radius: 32px;
+    padding: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 3;
     animation: phonefloat 4s ease-in-out infinite;
@@ -99,9 +100,38 @@
     width: 100%;
     height: 100%;
     border-radius: 28px;
-    background: linear-gradient(180deg, #F9FAFB 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 50%, #ffffff 100%);
     overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
+    animation: appScreenFadeIn 1s ease;
+}
+
+@keyframes appScreenFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+.app-screen-custom::-webkit-scrollbar {
+    width: 4px;
+}
+
+.app-screen-custom::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.app-screen-custom::-webkit-scrollbar-thumb {
+    background: rgba(0, 177, 79, 0.3);
+    border-radius: 2px;
+}
+
+.app-screen-custom::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 177, 79, 0.5);
 }
 
 /* App Header */
@@ -110,8 +140,24 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background: white;
-    border-bottom: 1px solid #E5E7EB;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 177, 79, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .app-logo {
@@ -148,11 +194,21 @@
     margin: 1rem;
     padding: 0.875rem 1rem;
     background: white;
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.12);
+    border: 2px solid rgba(0, 177, 79, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.app-search-bar:hover {
+    box-shadow: 0 8px 20px rgba(0, 177, 79, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
 }
 
 .app-search-bar i:first-child {
@@ -633,7 +689,7 @@
 
 .slider-nav {
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

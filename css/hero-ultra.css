@@ -3,12 +3,13 @@
    =================================== */
 
 .hero-section {
-    min-height: 100vh;
+    min-height: 85vh;
+    max-height: 90vh;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 140px 0 100px;
+    padding: 100px 0 80px;
 }
 
 /* Animated Gradient Background */
@@ -58,9 +59,9 @@
 .hero-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 /* Text Content */
