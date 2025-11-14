@@ -9,6 +9,31 @@
     min-height: 75vh;
     height: auto;
     overflow: visible;
+    padding-bottom: 160px;
+    transition: height 0.6s ease;
+}
+
+/* Ensure all slides follow grid layout */
+.hero-slide .hero-main {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-slide .hero-text-content {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.hero-slide .hero-visual-content,
+.hero-slide .app-mockup-showcase,
+.hero-slide .partnership-visual,
+.hero-slide .manufacturing-visual {
+    justify-self: end !important;
+    align-items: flex-end !important;
 }
 
 /* Slide Base Styling */
@@ -17,6 +42,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: auto;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.8s ease, visibility 0.8s ease;
@@ -48,22 +74,31 @@
 .hero-features-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     margin-bottom: 2.5rem;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     font-size: 1.0625rem;
-    color: var(--text-primary);
+    color: #2d2d2d;
     font-weight: 600;
+    padding: 0.75rem 0;
 }
 
 .feature-item i {
-    color: var(--primary-color);
-    font-size: 1.25rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    font-size: 0.75rem;
+    flex-shrink: 0;
 }
 
 /* App Mockup Showcase */
@@ -71,20 +106,49 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 500px;
+    justify-content: flex-end;
+    height: 550px;
+    width: 100%;
 }
 
 .phone-mockup {
-    width: 260px;
-    height: 480px;
-    background: #1F2937;
-    border-radius: 32px;
-    padding: 10px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    height: 560px;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    border-radius: 42px;
+    padding: 14px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: 3;
     animation: phonefloat 4s ease-in-out infinite;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 28px;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+}
+
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
 }
 
 @keyframes phonefloat {
@@ -100,12 +164,13 @@
 .app-screen-custom {
     width: 100%;
     height: 100%;
-    border-radius: 28px;
-    background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 50%, #ffffff 100%);
+    border-radius: 30px;
+    background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 30%, #E8F5E9 70%, #ffffff 100%);
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
     animation: appScreenFadeIn 1s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 177, 79, 0.1);
 }
 
 @keyframes appScreenFadeIn {
@@ -257,18 +322,38 @@
 .app-bike-card {
     margin: 0 1rem 1rem;
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 8px 24px rgba(0, 177, 79, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 177, 79, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-bike-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 32px rgba(0, 177, 79, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color);
 }
 
 .bike-card-image {
     position: relative;
-    height: 140px;
-    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    height: 160px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 50%, #BBF7D0 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.bike-card-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 177, 79, 0.1), transparent 60%);
 }
 
 .bike-card-image img {
@@ -281,12 +366,26 @@
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
-    padding: 0.375rem 0.75rem;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.3);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.bike-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .bike-card-info {
@@ -353,20 +452,40 @@
 
 .app-book-btn {
     width: 100%;
-    padding: 0.75rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 0.875rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 14px;
     font-weight: 700;
     font-size: 0.9375rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 177, 79, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-book-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .app-book-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 177, 79, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 177, 79, 0.35);
+}
+
+.app-book-btn:hover::before {
+    opacity: 1;
+}
+
+.app-book-btn:active {
+    transform: translateY(0);
 }
 
 /* Map Preview */
@@ -492,7 +611,7 @@
 }
 
 .benefit-card {
-    text-align: center;
+    text-align: left;
     padding: 1.5rem;
     background: rgba(0, 177, 79, 0.05);
     border-radius: 16px;
@@ -512,7 +631,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 0 1rem 0;
     font-size: 1.5rem;
     color: white;
 }
@@ -534,7 +653,7 @@
 .partnership-visual {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .partner-stats-card {
@@ -553,7 +672,7 @@
 }
 
 .stat-big {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
 }
@@ -643,6 +762,11 @@
 /* Manufacturing Visual */
 .manufacturing-visual {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
 }
 
 .models-grid-preview {
