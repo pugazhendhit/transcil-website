@@ -12,8 +12,10 @@
 @import url('navbar.css');
 @import url('hero-ultra.css');
 @import url('hero-slider.css');
-@import url('hero-alignment-fix.css');
 @import url('footer.css');
+
+/* CRITICAL FIX: Alignment fix must come LAST to override all other hero styles */
+@import url('hero-alignment-fix.css');
 
 /* UI Components */
 @import url('buttons.css');
@@ -27,4 +29,7 @@
 
 /* Animations (disabled bike animations) */
 /* @import url('bike-animations.css'); */
+
+/* ULTRA CRITICAL: This MUST be the absolute LAST import */
+@import url('hero-critical-fix.css');
 

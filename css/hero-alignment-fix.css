@@ -1,12 +1,20 @@
 /* ===================================
    HERO ALIGNMENT FIX - LEFT TEXT / RIGHT VISUAL
+   CRITICAL: This file must be loaded LAST to override all other styles
    =================================== */
+
+/* DEBUG: Add visual indicator that fix is loaded */
+.hero-section {
+    --alignment-fix-loaded: true;
+}
 
 /* Force all hero text elements to left alignment */
 .hero-section .hero-text-content,
 .hero-section .hero-text-content *,
 .hero-slide .hero-text-content,
-.hero-slide .hero-text-content * {
+.hero-slide .hero-text-content *,
+.hero-slide[data-slide="2"] .hero-text-content,
+.hero-slide[data-slide="2"] .hero-text-content * {
     text-align: left !important;
 }
 
@@ -119,6 +127,10 @@
 .benefit-icon {
     margin-left: 0 !important;
     margin-right: auto !important;
+    align-self: flex-start !important;
+    /* Icon itself can be centered internally, but container should be left aligned */
+    width: 60px !important;
+    height: 60px !important;
 }
 
 .benefit-card h4,
@@ -220,4 +232,60 @@
     .hero-headline {
         font-size: 2rem !important;
     }
+}
+
+/* ===================================
+   SPECIFIC FIXES FOR SLIDE 2 (PARTNERSHIP)
+   =================================== */
+
+/* Target slide 2 specifically */
+.hero-slide[data-slide="2"] .hero-main {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 4rem !important;
+    align-items: start !important; /* Changed from center to start */
+}
+
+.hero-slide[data-slide="2"] .hero-text-content {
+    grid-column: 1 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.hero-slide[data-slide="2"] .hero-text-content > * {
+    text-align: left !important;
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+.hero-slide[data-slide="2"] .hero-eyebrow,
+.hero-slide[data-slide="2"] .hero-headline,
+.hero-slide[data-slide="2"] .hero-description {
+    text-align: left !important;
+    align-self: flex-start !important;
+    width: 100% !important;
+}
+
+.hero-slide[data-slide="2"] .partnership-benefits {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+.hero-slide[data-slide="2"] .benefit-card {
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+.hero-slide[data-slide="2"] .hero-cta-group {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+}
+
+.hero-slide[data-slide="2"] .partnership-visual {
+    grid-column: 2 !important;
+    justify-self: end !important;
 }
