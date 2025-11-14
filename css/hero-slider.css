@@ -94,11 +94,293 @@
     }
 }
 
-.app-screen {
+/* Custom TRANSCIL App Screen */
+.app-screen-custom {
     width: 100%;
     height: 100%;
     border-radius: 28px;
-    object-fit: cover;
+    background: linear-gradient(180deg, #F9FAFB 0%, #ffffff 100%);
+    overflow-y: auto;
+    position: relative;
+}
+
+/* App Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.app-logo-text {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.app-user i {
+    font-size: 1.75rem;
+    color: var(--text-secondary);
+}
+
+/* Search/Location Bar */
+.app-search-bar {
+    margin: 1rem;
+    padding: 0.875rem 1rem;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.app-search-bar i:first-child {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.app-search-bar span {
+    flex: 1;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.app-search-bar i:last-child {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Section Title */
+.app-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.app-section-title span:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bikes-count {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    background: rgba(0, 177, 79, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Bike Card */
+.app-bike-card {
+    margin: 0 1rem 1rem;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bike-card-image {
+    position: relative;
+    height: 140px;
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bike-card-image img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+.bike-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.bike-card-info {
+    padding: 1rem;
+}
+
+.bike-card-info h4 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.bike-specs-mini {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.bike-specs-mini span {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.bike-specs-mini i {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+}
+
+.bike-location-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.bike-location-mini i {
+    color: #EF4444;
+}
+
+.bike-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.price-amount {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.price-period {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.app-book-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.app-book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 177, 79, 0.3);
+}
+
+/* Map Preview */
+.app-map-preview {
+    margin: 0 1rem 5rem;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px dashed rgba(0, 177, 79, 0.3);
+}
+
+.map-placeholder i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.map-placeholder span {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Bottom Navigation */
+.app-bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #E5E7EB;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.5rem 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-item i {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.nav-item span {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.nav-item.active i,
+.nav-item.active span {
+    color: var(--primary-color);
+}
+
+.nav-item:hover i,
+.nav-item:hover span {
+    color: var(--primary-color);
 }
 
 .bike-preview {
