@@ -1,5 +1,24 @@
 /* Reusable Components */
 
+/* Outlined/Hollow Text Effect */
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px currentColor;
+    text-stroke: 2px currentColor;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.3;
+    font-weight: 900;
+}
+
+.outline-text-green {
+    color: transparent;
+    -webkit-text-stroke: 2px #22c55e;
+    text-stroke: 2px #22c55e;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.3;
+    font-weight: 900;
+}
+
 /* Mission Section */
 .mission {
     padding: var(--spacing-xl) 0;

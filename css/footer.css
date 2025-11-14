@@ -1,9 +1,35 @@
-/* Footer Styles */
+/* Modern Animated Footer */
 .footer {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 60px 0 30px;
-    border-top: 2px solid var(--primary-color);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(135deg,
+        #f0fdf4 0%,
+        #dcfce7 20%,
+        #bbf7d0 40%,
+        #86efac 60%,
+        #4ade80 80%,
+        #22c55e 100%);
+    background-size: 200% 200%;
+    animation: footerGradient 20s ease infinite;
+    padding: 80px 0 30px;
+    border-top: none;
+    box-shadow: 0 -8px 32px rgba(0, 177, 79, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes footerGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
 
 .footer-content {
@@ -11,12 +37,51 @@
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .footer-section h3 {
     margin-bottom: 1.5rem;
-    color: var(--text-primary);
-    font-weight: 600;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, transparent);
+    border-radius: 2px;
 }
 
 .footer-logo {
@@ -42,32 +107,28 @@
     font-size: 1.75rem;
     font-weight: 900;
     letter-spacing: 1.2px;
-    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0f172a;
     line-height: 1;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .footer-logo .brand-tagline {
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: #374151;
     line-height: 1;
 }
 
 .footer-logo .ebike-icon {
     font-size: 1.5rem;
-    background: linear-gradient(135deg, #00B14F 0%, #00D35F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0f172a;
 }
 
 .footer-section p {
-    color: var(--text-secondary);
+    color: #374151;
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    font-weight: 500;
 }
 
 .footer-section ul {
@@ -76,16 +137,55 @@
 
 .footer-section ul li {
     margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 18px;
+}
+
+.footer-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li:hover::before {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.5);
 }
 
 .footer-section ul li a {
-    color: var(--text-secondary);
+    color: #1f2937;
     text-decoration: none;
-    transition: color var(--transition-normal);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-section ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--primary-color);
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.footer-section ul li a:hover::after {
+    width: 100%;
 }
 
 .social-links {
@@ -95,32 +195,86 @@
 }
 
 .social-links a {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    transition: all var(--transition-normal);
+    color: #0f172a;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .social-links a:hover {
-    background: var(--accent-color);
-    transform: translateY(-3px);
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a:hover::before {
+    opacity: 1;
+}
+
+.social-links a i {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+}
+
+.social-links a:nth-child(1):hover {
+    animation: bounce 0.6s ease;
+}
+
+.social-links a:nth-child(2):hover {
+    animation: bounce 0.6s ease 0.1s;
+}
+
+.social-links a:nth-child(3):hover {
+    animation: bounce 0.6s ease 0.2s;
+}
+
+.social-links a:nth-child(4):hover {
+    animation: bounce 0.6s ease 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-5px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(16, 185, 129, 0.2);
-    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: #1f2937;
+    font-weight: 500;
 }
 
 .footer-bottom i {
     color: #ef4444;
+    animation: heartBeat 1.5s ease infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.1); }
+    20%, 40% { transform: scale(1); }
 }
 
 @media (max-width: 1024px) {
